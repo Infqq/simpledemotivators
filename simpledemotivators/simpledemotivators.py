@@ -50,9 +50,9 @@ class demcreate:
             return (area[2] - area[0], area[3] - area[1])
 
         def makeImage(self, file):
-            frame = PIL.Image.open(TEMPLATE_FILENAME)
-            demot = PIL.Image.open(file+".jpg")
-            demot = demot.resize(self.getSizeFromArea(TEMPLATE_COORDS), PIL.Image.ANTIALIAS)
+            frame = Image.open(TEMPLATE_FILENAME)
+            demot = Image.open(file+".jpg")
+            demot = demot.resize(self.getSizeFromArea(TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, TEMPLATE_COORDS)
 
             demcreate.drawXAxisCenteredText(frame, self._str1,
