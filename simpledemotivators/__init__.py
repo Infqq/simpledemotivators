@@ -1,4 +1,4 @@
   
-import infinitytools
-from .infinitytools import demcreate
-from .infinitytools import *
+import simpledemotivators
+from .simpledemotivators import demcreate
+from .simpledemotivators import *
