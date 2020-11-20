@@ -14,7 +14,7 @@
 Сохраняет файл под названием - demresult.jpg
 
 ```python
-from simpledemotivators import *
+from simpledemotivators import demcreate
 
 dem = demcreate('Эй', 'что?') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
 dem.makeImage('filename') #Название изображения, которая будет взята за основу демотиватора
