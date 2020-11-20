@@ -4,7 +4,7 @@ setuptools.setup(
     name="simpledemotivators",
     version="1.0.0",
     author="infqq",
-    description="Tool for Rates",
+    description="Tool for easy demotivators",
     url="https://github.com/Infqq/simpledemotivators",
     packages=setuptools.find_packages(),
     classifiers=[
