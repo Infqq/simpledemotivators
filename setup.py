@@ -13,6 +13,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-        "PIL~=7.1.1"
+        "pillow~=7.1.1"
     ]
 )
