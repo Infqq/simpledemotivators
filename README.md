@@ -9,6 +9,7 @@
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/main.zip --upgrade
    ```
+2) Дополнительно скачиваем из репозитория файл template.jpg
 
 ### Использование
 Сохраняет файл под названием - demresult.jpg
