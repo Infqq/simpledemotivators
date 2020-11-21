@@ -46,5 +46,5 @@ class demcreate:
                                   settings.LOWER_FONT, settings.LOWER_SIZE,
                                   settings.LOWER_FONT_Y)
             frame = frame.convert("RGB")
-            frame.save(settings.PADDINGRESULT_FILENAME)
+            frame.save(settings.RESULT_FILENAME)
             frame.show()
