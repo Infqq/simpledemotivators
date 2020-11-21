@@ -3,6 +3,8 @@
 </p>
 <hr>
 
+![glaza](demresult.png)
+
 ## Установка
 1) С помощью установщика pip из GitHub: 
    
