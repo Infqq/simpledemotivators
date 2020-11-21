@@ -3,7 +3,7 @@
 </p>
 <hr>
 
-![glaza](demresult.png)
+![prikol](demresult.jpg)
 
 ## Установка
 1) С помощью установщика pip из GitHub: 
