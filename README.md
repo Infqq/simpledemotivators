@@ -1,9 +1,11 @@
-<h1 align="center">SimpleDemotivators</h1> * [English documentation here](./docs/eng.md)
+<h1 align="center">SimpleDemotivators</h1>
     <blockquote>Создать демотиватор? Легко!</blockquote>
 </p>
 <hr>
 
 ![prikol](demresult.jpg)
+
+* [English documentation here](./docs/eng.md)
 
 ## Установка
 1) С помощью установщика pip из GitHub: 
