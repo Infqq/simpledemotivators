@@ -1,5 +1,5 @@
   
 import simpledemotivators
-from .simpledemotivators import demcreate
-from .simpledemotivators import prodemoty
-from .simpledemotivators import *
+from .demcreate import demcreate
+from .demcreate import demcreate
+from simpledemotivators import *
