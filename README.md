@@ -1,4 +1,4 @@
-<h1 align="center">SimpleDemotivators [English documentation here](./docs/eng.md)</h1>
+<h1 align="center">SimpleDemotivators * [English documentation here](./docs/eng.md)</h1>
     <blockquote>Создать демотиватор? Легко!</blockquote>
 </p>
 <hr>
