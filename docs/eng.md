@@ -5,7 +5,7 @@
 
 ![prikol](demresulteng.jpg)
 
-## Create a demotivator? It's easy!
+## Installation
 1) Using the pip installer from GitHub: 
    
    ```sh
