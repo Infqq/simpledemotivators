@@ -1,4 +1,4 @@
-<h1 align="center">SimpleDemotivators</h1>
+<h1 align="center">SimpleDemotivators [English documentation here](./docs/eng.md)</h1>
     <blockquote>Создать демотиватор? Легко!</blockquote>
 </p>
 <hr>
@@ -34,5 +34,5 @@ dem.setfont(UPPER_FONT = 'times.ttf', UPPER_SIZE = 45, UPPER_FONT_Y = 390, LOWER
 dem.makeImage('filename')
 ```
 
-### Documentation
-Here - https://github.com/Infqq/simpledemotivators/blob/main/docs/prodemoty.md
+### Документация
+* [Произвольные демотиваторы](./docs/prodemoty.md)
