@@ -38,7 +38,7 @@ class demcreate:
             return (area[2] - area[0], area[3] - area[1])
 
         def makeImage(self, file):
-            frame = frame = Image.open(f"{img_folder}/{settings.TEMPLATE_FILENAME}")
+            frame = Image.open(f"{img_folder}/{settings.TEMPLATE_FILENAME}")
             demot = Image.open(file+".jpg")
             demot = demot.resize(self.getSizeFromArea(settings.TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, settings.TEMPLATE_COORDS)
