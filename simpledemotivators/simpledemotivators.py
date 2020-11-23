@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-import settings
+from . import settings
 
 
 str1 = ''
