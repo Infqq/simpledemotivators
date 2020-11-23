@@ -13,7 +13,13 @@
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/main.zip --upgrade
    ```
-2) Дополнительно скачиваем из репозитория файл template.jpg
+2) С помощью установщика pip из pypi: 
+   
+   ```sh
+   pip install simpledemotivators
+   ```
+  
+3) Дополнительно скачиваем из репозитория файл template.jpg
 
 ### Использование
 Сохраняет файл под названием - demresult.jpg
