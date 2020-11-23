@@ -1,9 +1,13 @@
 from PIL import Image, ImageDraw, ImageFont
 from . import settings
+import os
 
 
 str1 = ''
 str2 = ''
+path = os.path.dirname(__file__)
+path = os.path.dirname(__file__)
+img_folder = os.path.join(path, "simpledemotivators")
 
 
 class demcreate:
