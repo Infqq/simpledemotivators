@@ -35,4 +35,4 @@ dem.makeImage('filename')
 ```
 
 ### Documentation (RU)
-* [Произвольные демотиваторы](./docs/prodemoty.md)
+* [Произвольные демотиваторы](docs/prodemoty.md)
