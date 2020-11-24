@@ -36,7 +36,7 @@ class demcreate:
 
         def makeImage(self, file):
             frame = Image.open(path.join(path.dirname(__file__), settings.TEMPLATE_FILENAME)
-            demot = Image.open(file+".jpg")
+            demot = Image.open(file+'.jpg')
             demot = demot.resize(self.getSizeFromArea(settings.TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, settings.TEMPLATE_COORDS)
 
@@ -93,7 +93,7 @@ class prodemoty:
 
         def makeImage(self, file):
             frame = Image.open(settings.TEMPLATE_FILENAME)
-            demot = Image.open(file+".jpg")
+            demot = Image.open(file+'.jpg')
             demot = demot.resize(self.getSizeFromArea(self._TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, self._TEMPLATE_COORDS)
 
