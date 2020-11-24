@@ -5,7 +5,7 @@ import os
 
 str1 = ''
 str2 = ''
-path = os.path.dirname(__file__).split("/")
+path = os.path.dirname(__file__)
 img_folder = os.path.join(path, settings.TEMPLATE_FILENAME)
 
 
