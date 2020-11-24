@@ -7,7 +7,7 @@ str1 = ''
 str2 = ''
 path = os.path.dirname(__file__)
 path = os.path.dirname(__file__)
-img_folder = os.path.join(path, "simpledemotivators")
+img_folder = os.path.join(path, settings.TEMPLATE_FILENAME)
 
 
 class demcreate:
@@ -38,7 +38,7 @@ class demcreate:
             return (area[2] - area[0], area[3] - area[1])
 
         def makeImage(self, file):
-            frame = frame = Image.open(f"{img_folder}/{settings.TEMPLATE_FILENAME}")
+            frame = frame = Image.open(f"{img_folder}")
             demot = Image.open(file+'.jpg')
             demot = demot.resize(self.getSizeFromArea(settings.TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, settings.TEMPLATE_COORDS)
