@@ -1,10 +1,13 @@
 from PIL import Image, ImageDraw, ImageFont
-from simpledemotivators import settings
+from . import settings
 import os
 
 
 str1 = ''
 str2 = ''
+path = os.path.dirname(__file__)
+path = os.path.dirname(__file__)
+img_folder = os.path.join(path, "simpledemotivators")
 
 
 class demcreate:
@@ -35,7 +38,7 @@ class demcreate:
             return (area[2] - area[0], area[3] - area[1])
 
         def makeImage(self, file):
-            frame = Image.open(path.join(path.dirname(__file__), settings.TEMPLATE_FILENAME)
+            frame = frame = Image.open(f"{img_folder}/{settings.TEMPLATE_FILENAME}")
             demot = Image.open(file+'.jpg')
             demot = demot.resize(self.getSizeFromArea(settings.TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, settings.TEMPLATE_COORDS)
@@ -93,7 +96,7 @@ class prodemoty:
 
         def makeImage(self, file):
             frame = Image.open(settings.TEMPLATE_FILENAME)
-            demot = Image.open(file+'.jpg')
+            demot = Image.open(file+".jpg")
             demot = demot.resize(self.getSizeFromArea(self._TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, self._TEMPLATE_COORDS)
 
