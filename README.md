@@ -3,7 +3,7 @@
 </p>
 <hr>
 
-![prikol](demresult.jpg)
+![prikol1](demresult.jpg)
 
 * [English documentation here](./docs/eng.md)
 
