@@ -42,3 +42,5 @@ dem.makeImage('filename')
 
 ### Документация
 * [Произвольные демотиваторы](./docs/prodemoty.md)
+
+[![Stargazers over time](https://starchart.cc/Infqq/simpledemotivators.svg)](https://starchart.cc/Infqq/simpledemotivators)
