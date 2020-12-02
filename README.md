@@ -18,8 +18,6 @@
    ```sh
    pip install simpledemotivators
    ```
-  
-3) Дополнительно скачиваем из репозитория файл template.jpg
 
 ### Использование
 Сохраняет файл под названием - demresult.jpg
