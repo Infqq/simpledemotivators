@@ -70,7 +70,7 @@ class prodemoty:
 
         def makeImage(self, file):
             frame = Image.open(settings.TEMPLATE_FILENAME)
-            demot = Image.open(file+".jpg")
+            demot = Image.open(file)
             demot = demot.resize(self.getSizeFromArea(self._TEMPLATE_COORDS), Image.ANTIALIAS)
             frame.paste(demot, self._TEMPLATE_COORDS)
 
