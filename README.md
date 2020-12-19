@@ -37,7 +37,7 @@ from simpledemotivators import prodemoty
 dem = prodemoty('советский', 'союз?')
 dem.setimg(TEMPLATE_COORDS=(75, 45, 499, 373), TEMPLATE_WIDTH = 574, TEMPLATE_HEIGHT = 522, PADDING=10)
 dem.setfont(UPPER_FONT = 'times.ttf', UPPER_SIZE = 45, UPPER_FONT_Y = 390, LOWER_FONT = 'arialbd.ttf', LOWER_SIZE = 14, LOWER_FONT_Y = 450)
-dem.makeImage('filename')
+dem.makeImage('filename.jpg')
 ```
 
 ### Документация
