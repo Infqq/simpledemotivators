@@ -15,7 +15,7 @@ class demcreate:
                 img = Image.new('RGB', (1280, 1024), color=('#000000'))
                 img_border = Image.new('RGB', (1060, 720), color=('#000000'))
                 border = ImageOps.expand(img_border, border=2, fill='#ffffff')
-                user_img = Image.open(file+'.jpg').convert("RGBA").resize((1050, 710))
+                user_img = Image.open(file).convert("RGBA").resize((1050, 710))
                 img.paste(border, (111, 96))
                 img.paste(user_img, (118, 103))
                 drawer = ImageDraw.Draw(img)
