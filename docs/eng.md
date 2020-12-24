@@ -20,7 +20,7 @@ Saves a file called - demresult.jpg
 from simpledemotivators import demcreate
 
 dem = demcreate('soviet', 'union?')
-dem.makeImage('filename') #The title of the image that will be taken as a basis for the demotivator
+dem.makeImage('filename.jpg') #The title of the image that will be taken as a basis for the demotivator
 ```
 
 or
