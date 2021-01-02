@@ -91,6 +91,7 @@ class arrangedem:
 
         def makeImage(self, file):
                 size2 = 50
+                size3 = 30
                 user_img = Image.open(file).convert("RGBA")
                 (width, height) = user_img.size
                 img = Image.new('RGB', (width+250, height+240), color=('#000000'))
@@ -105,12 +106,11 @@ class arrangedem:
                         font_1 = ImageFont.truetype(font='times.ttf', size=size2, encoding='UTF-8')
                         textWidth = font_1.getsize(self._text1)[0]
                         size2 -= 1
-                size2 = 30
                 font_2 = ImageFont.truetype(font='times.ttf', size=30, encoding='UTF-8')
                 while textWidth >= (width+250) - 20:
                         font_2 = ImageFont.truetype(font='times.ttf', size=size2, encoding='UTF-8')
                         textWidth = font_2.getsize(self._text2)[0]
-                        size2 -= 1
+                        size3 -= 1
                 size_1 = drawer.textsize(self._text1, font=font_1)
                 drawer.text((((width+250) - size_1[0]) / 2, ((height+170) - size_1[1])), self._text1, fill=(240, 230, 210), font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
