@@ -1,6 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from simpledemotivators import settings
-import textwrap
 
 
 str1 = ''
@@ -98,13 +97,11 @@ class arrangedem:
                 border = ImageOps.expand(img_border, border=2, fill='#ffffff')
                 img.paste(border, (111, 96))
                 img.paste(user_img, (118, 103))
-                txt1 = textwrap.wrap(self._text1, width=width+250)
-                txt2 = textwrap.wrap(self._text2, width=width+250)
                 drawer = ImageDraw.Draw(img)
                 font_1 = ImageFont.truetype(font='times.ttf', size=50, encoding='UTF-8')
                 font_2 = ImageFont.truetype(font='arialbd.ttf', size=30, encoding='UTF-8')
-                size_1 = drawer.textsize(txt1, font=font_1)
-                drawer.text((((width+250) - size_1[0]) / 2, ((height+170) - size_1[1])), txt1, fill=(240, 230, 210), font=font_1)
-                size_2 = drawer.textsize(txt2, font=font_2)
-                drawer.text((((width+250) - size_2[0]) / 2, ((height+215) - size_2[1])), txt2, fill=(240, 230, 210), font=font_2)
+                size_1 = drawer.textsize(self._text1, font=font_1)
+                drawer.text((((width+250) - size_1[0]) / 2, ((height+170) - size_1[1])), self._text1, fill=(240, 230, 210), font=font_1)
+                size_2 = drawer.textsize(self._text2, font=font_2)
+                drawer.text((((width+250) - size_2[0]) / 2, ((height+215) - size_2[1])), self._text2, fill=(240, 230, 210), font=font_2)
                 img.save(settings.RESULT_FILENAME)
