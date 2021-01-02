@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="simpledemotivators",
-    version="1.2.0",
+    version="1.3.0",
     author="infqq",
     description="Tool for easy demotivators",
     url="https://github.com/Infqq/simpledemotivators",
