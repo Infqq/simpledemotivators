@@ -1,6 +1,6 @@
 import simpledemotivators
-from .simpledemotivators import demcreate
-from .simpledemotivators import prodemoty
-from .simpledemotivators import arrangedem
-from .simpledemotivators import settings
-from .simpledemotivators import *
+from . import demcreate
+from . import prodemoty
+from . import arrangedem
+from . import settings
+from . import *
