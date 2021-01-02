@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
-from . import settings
+from simpledemotivators import settings
 
 
 str1 = ''
