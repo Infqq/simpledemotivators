@@ -50,5 +50,6 @@ dem.makeImage('filename.png') #Название изображения, кото
 
 ### Документация
 * [Произвольные демотиваторы](./docs/prodemoty.md)
+* [Возможные ошибки](./docs/errors.md)
 
 [![Stargazers over time](https://starchart.cc/Infqq/simpledemotivators.svg)](https://starchart.cc/Infqq/simpledemotivators)
