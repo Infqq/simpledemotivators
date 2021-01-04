@@ -16,3 +16,5 @@ setuptools.setup(
         "pillow~=7.1.1"
     ]
 )
+
+print('Спасибо за выбор SimpleDemotivators <3')
