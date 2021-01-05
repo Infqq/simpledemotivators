@@ -12,6 +12,7 @@ class demcreate:
                 self._text2 = text2
 
         def makeImage(self, file):
+                self._file = file
                 size2 = 50
                 size3 = 30
                 img = Image.new('RGB', (1280, 1024), color=('#000000'))
