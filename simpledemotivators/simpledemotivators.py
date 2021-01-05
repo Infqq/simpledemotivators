@@ -52,7 +52,7 @@ class demcreate:
                         idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
                         photo1.save(settings.RESULT_FILENAME)
                 else:
-                        photo1 = Image.open(self._file)
+                        photo1 = Image.open(settings.RESULT_FILENAME)
                         (width, height) = photo1.size
                         idraw = ImageDraw.Draw(photo1)
                         idraw.line((820,817, 980, 817), fill=0, width=4)
