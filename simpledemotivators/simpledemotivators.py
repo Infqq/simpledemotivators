@@ -40,6 +40,25 @@ class demcreate:
                 drawer.text(((1280 - size_2[0]) / 2, 950), self._text2, fill=(240, 230, 210), font=font_2)
                 img.save(settings.RESULT_FILENAME)
 
+        def setline(self, text):
+                if len(text) > 12:
+                        photo1 = Image.open(self._file)
+                        (width, height) = photo1.size
+                        idraw = ImageDraw.Draw(photo1)
+                        idraw.line((780,817, 1020, 817), fill=0, width=4)
+                        font_2 = ImageFont.truetype(font='times.ttf', size=25, encoding='UTF-8')
+                        size_2 = idraw.textsize(text, font=font_2)
+                        idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
+                        photo1.save(settings.RESULT_FILENAME)
+                else:
+                        photo1 = Image.open(self._file)
+                        (width, height) = photo1.size
+                        idraw = ImageDraw.Draw(photo1)
+                        idraw.line((820,817, 980, 817), fill=0, width=4)
+                        font_2 = ImageFont.truetype(font='times.ttf', size=25, encoding='UTF-8')
+                        size_2 = idraw.textsize(text, font=font_2)
+                        idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
+                        photo1.save(settings.RESULT_FILENAME)
 class prodemoty:
         def __init__(self, str1: str, str2: str) -> str:
                 self._str1 = str1
