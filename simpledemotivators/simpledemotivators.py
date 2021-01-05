@@ -43,7 +43,7 @@ class demcreate:
 
         def setline(self, text):
                 if len(text) > 12:
-                        photo1 = Image.open(self._file)
+                        photo1 = Image.open(settings.RESULT_FILENAME)
                         (width, height) = photo1.size
                         idraw = ImageDraw.Draw(photo1)
                         idraw.line((780,817, 1020, 817), fill=0, width=4)
