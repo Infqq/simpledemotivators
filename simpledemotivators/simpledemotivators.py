@@ -13,8 +13,8 @@ class demcreate:
 
         def makeImage(self, file):
                 self._file = file
-                size2 = 50
-                size3 = 30
+                size2 = 80
+                size3 = 60
                 img = Image.new('RGB', (1280, 1024), color=('#000000'))
                 img_border = Image.new('RGB', (1060, 720), color=('#000000'))
                 border = ImageOps.expand(img_border, border=2, fill='#ffffff')
@@ -23,23 +23,43 @@ class demcreate:
                 img.paste(border, (111, 96))
                 img.paste(user_img, (118, 103))
                 drawer = ImageDraw.Draw(img)
-                font_1 = ImageFont.truetype(font='times.ttf', size=50, encoding='UTF-8')
+                font_1 = ImageFont.truetype(font='times.ttf', size=size2, encoding='UTF-8')
                 textWidth = font_1.getsize(self._text1)[0]
                 while textWidth >= (width+250) - 20:
                         font_1 = ImageFont.truetype(font='times.ttf', size=size2, encoding='UTF-8')
                         textWidth = font_1.getsize(self._text1)[0]
                         size2 -= 1
-                font_2 = ImageFont.truetype(font='arialbd.ttf', size=30, encoding='UTF-8')
+                font_2 = ImageFont.truetype(font='arialbd.ttf', size=size3, encoding='UTF-8')
                 textWidth = font_2.getsize(self._text2)[0]
                 while textWidth >= (width+250) - 20:
                         font_2 = ImageFont.truetype(font='arialbd.ttf', size=size3, encoding='UTF-8')
                         textWidth = font_2.getsize(self._text2)[0]
                         size3 -= 1
                 size_1 = drawer.textsize(self._text1, font=font_1)
-                drawer.text(((1280 - size_1[0]) / 2, 850), self._text1, fill=(240, 230, 210), font=font_1)
+                drawer.text(((1280 - size_1[0]) / 2, 840), self._text1, fill=(240, 230, 210), font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
-                drawer.text(((1280 - size_2[0]) / 2, 950), self._text2, fill=(240, 230, 210), font=font_2)
+                drawer.text(((1280 - size_2[0]) / 2, 940), self._text2, fill=(240, 230, 210), font=font_2)
                 img.save(settings.RESULT_FILENAME)
+
+        def setline(self, text):
+                if len(text) > 12:
+                        photo1 = Image.open(self._file)
+                        (width, height) = photo1.size
+                        idraw = ImageDraw.Draw(photo1)
+                        idraw.line((780,815, 1020, 815), fill=0, width=4)
+                        font_2 = ImageFont.truetype(font='times.ttf', size=25, encoding='UTF-8')
+                        size_2 = idraw.textsize(text, font=font_2)
+                        idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
+                        photo1.save(settings.RESULT_FILENAME)
+                else:
+                        photo1 = Image.open(settings.RESULT_FILENAME)
+                        (width, height) = photo1.size
+                        idraw = ImageDraw.Draw(photo1)
+                        idraw.line((940,817, 1065, 817), fill=0, width=4)
+                        font_2 = ImageFont.truetype(font='times.ttf', size=20, encoding='UTF-8')
+                        size_2 = idraw.textsize(text, font=font_2)
+                        idraw.text((((width+729) - size_2[0]) / 2, ((height-192) - size_2[1])), text, font=font_2)
+                        photo1.save(settings.RESULT_FILENAME)
 
         def setline(self, text):
                 if len(text) > 12:
