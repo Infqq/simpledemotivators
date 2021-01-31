@@ -36,9 +36,9 @@ class demcreate:
                         textWidth = font_2.getsize(self._text2)[0]
                         size3 -= 1
                 size_1 = drawer.textsize(self._text1, font=font_1)
-                drawer.text(((1280 - size_1[0]) / 2, 840), self._text1, fill=(240, 230, 210), font=font_1)
+                drawer.text(((1280 - size_1[0]) / 2, 820), self._text1, fill=(240, 230, 210), font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
-                drawer.text(((1280 - size_2[0]) / 2, 940), self._text2, fill=(240, 230, 210), font=font_2)
+                drawer.text(((1280 - size_2[0]) / 2, 920), self._text2, fill=(240, 230, 210), font=font_2)
                 img.save(settings.RESULT_FILENAME)
 
         def setline(self, text):
