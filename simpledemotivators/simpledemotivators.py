@@ -49,7 +49,7 @@ class demcreate:
                         idraw.line((780,817, 1020, 817), fill=0, width=4)
                         font_2 = ImageFont.truetype(font='times.ttf', size=25, encoding='UTF-8')
                         size_2 = idraw.textsize(text, font=font_2)
-                        idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
+                        idraw.text((((width+520) - size_2[0]) / 2, ((height-188) - size_2[1])), text, font=font_2)
                         photo1.save(settings.RESULT_FILENAME)
                 else:
                         photo1 = Image.open(settings.RESULT_FILENAME)
@@ -58,7 +58,7 @@ class demcreate:
                         idraw.line((820,817, 980, 817), fill=0, width=4)
                         font_2 = ImageFont.truetype(font='times.ttf', size=25, encoding='UTF-8')
                         size_2 = idraw.textsize(text, font=font_2)
-                        idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
+                        idraw.text((((width+520) - size_2[0]) / 2, ((height-188) - size_2[1])), text, font=font_2)
                         photo1.save(settings.RESULT_FILENAME)
 class prodemoty:
         def __init__(self, str1: str, str2: str) -> str:
