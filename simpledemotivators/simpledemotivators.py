@@ -29,10 +29,10 @@ class demcreate:
                         font_1 = ImageFont.truetype(font='times.ttf', size=size2, encoding='UTF-8')
                         textWidth = font_1.getsize(self._text1)[0]
                         size2 -= 1
-                font_2 = ImageFont.truetype(font='arialbd.ttf', size=size3, encoding='UTF-8')
+                font_2 = ImageFont.truetype(font='times.ttf', size=size3, encoding='UTF-8')
                 textWidth = font_2.getsize(self._text2)[0]
                 while textWidth >= (width+250) - 20:
-                        font_2 = ImageFont.truetype(font='arialbd.ttf', size=size3, encoding='UTF-8')
+                        font_2 = ImageFont.truetype(font='times.ttf', size=size3, encoding='UTF-8')
                         textWidth = font_2.getsize(self._text2)[0]
                         size3 -= 1
                 size_1 = drawer.textsize(self._text1, font=font_1)
