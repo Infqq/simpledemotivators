@@ -11,7 +11,7 @@ class demcreate:
                 self._text1 = text1
                 self._text2 = text2
 
-        def makeImage(self, file):
+        def makeImage(self, file, RESULT_FILENAME=None):
                 self._file = file
                 size2 = 80
                 size3 = 60
@@ -39,7 +39,10 @@ class demcreate:
                 drawer.text(((1280 - size_1[0]) / 2, 820), self._text1, fill=(240, 230, 210), font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
                 drawer.text(((1280 - size_2[0]) / 2, 920), self._text2, fill=(240, 230, 210), font=font_2)
-                img.save(settings.RESULT_FILENAME)
+                if RESULT_FILENAME == None:
+                        img.save(settings.RESULT_FILENAME)
+                else:
+                        img.save(RESULT_FILENAME)
 
         def setline(self, text):
                 if len(text) > 12:
