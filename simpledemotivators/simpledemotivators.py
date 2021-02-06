@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from simpledemotivators import settings
-
+import textwrap
 
 str1 = ''
 str2 = ''
@@ -127,8 +127,8 @@ class arrangedem:
                 self._text2 = text2
 
         def makeImage(self, file):
-                size2 = 50
-                size3 = 30
+                size2 = 80
+                size3 = 60
                 user_img = Image.open(file).convert("RGBA")
                 (width, height) = user_img.size
                 img = Image.new('RGB', (width+250, height+240), color=('#000000'))
@@ -154,3 +154,27 @@ class arrangedem:
                 size_2 = drawer.textsize(self._text2, font=font_2)
                 drawer.text((((width+250) - size_2[0]) / 2, ((height+215) - size_2[1])), self._text2, fill=(240, 230, 210), font=font_2)
                 img.save(settings.RESULT_FILENAME)
+
+class quote:
+        def __init__(self, text: str, name: str) -> str:
+                self._text = text
+                self._name = name
+
+        def get(self, file):
+                text = ''
+                lines = textwrap.wrap('"' + self._text + '"', width=24)
+
+                for i in lines:
+                        text = text + i + '\n'
+                user_img = Image.new('RGB', (1155, 600), color=('#000000'))
+
+                drawer = ImageDraw.Draw(user_img)
+                font_1 = ImageFont.truetype(font='arialbd.ttf', size=40, encoding='UTF-8')
+
+                drawer.text((529, 90), text[:292], fill='white', font=font_1)
+
+                drawer.text((112, 510), self._name, fill='white', font=font_1)
+                img = Image.open(file).convert("RGBA").resize((400, 400))
+                user_img.paste(img, (100, 100))
+                    
+                user_img.save('qresult.jpg')
