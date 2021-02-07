@@ -155,8 +155,8 @@ class arrangedem:
                 drawer.text((((width+250) - size_2[0]) / 2, ((height+215) - size_2[1])), self._text2, fill=(240, 230, 210), font=font_2)
                 img.save(settings.RESULT_FILENAME)
 
-class quote(text, name):
-        def __init__(self, text: str, name: str) -> str:
+class quote:
+        def __init__(self, text: str, name: str):
                 self._text = text
                 self._name = name
 
