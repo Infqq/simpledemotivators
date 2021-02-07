@@ -156,7 +156,7 @@ class arrangedem:
                 img.save(settings.RESULT_FILENAME)
 
 class quote:
-        def __init__(self, text: str, name: str):
+        def __init__(self, text: str, name: str) -> str:
                 self._text = text
                 self._name = name
 
