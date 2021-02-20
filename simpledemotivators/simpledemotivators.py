@@ -154,13 +154,12 @@ class arrangedem:
                 size_2 = drawer.textsize(self._text2, font=font_2)
                 drawer.text((((width+250) - size_2[0]) / 2, ((height+215) - size_2[1])), self._text2, fill=(240, 230, 210), font=font_2)
                 img.save(settings.RESULT_FILENAME)
-
 class quote:
         def __init__(self, text: str, name: str) -> str:
                 self._text = text
                 self._name = name
 
-        def get(self, file):
+        def get(self, file, RESULT_FILENAME='qresult.jpg'):
                 text = ''
                 lines = textwrap.wrap('"' + self._text + '"', width=24)
 
@@ -177,4 +176,4 @@ class quote:
                 img = Image.open(file).convert("RGBA").resize((400, 400))
                 user_img.paste(img, (100, 100))
                     
-                user_img.save('qresult.jpg')
+                user_img.save(RESULT_FILENAME)
