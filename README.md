@@ -30,17 +30,7 @@ dem = demcreate('Эй', 'что?') #2 строчки, если вы хотите
 dem.makeImage('filename.jpg') #Название изображения, которое будет взято за основу демотиватора
 ```
 
-2. prodemoty() - создает демотиватор по вашим настройкам 
-```python 
-from simpledemotivators import prodemoty
-
-dem = prodemoty('советский', 'союз?')
-dem.setimg(TEMPLATE_COORDS=(75, 45, 499, 373), TEMPLATE_WIDTH = 574, TEMPLATE_HEIGHT = 522, PADDING=10)
-dem.setfont(UPPER_FONT = 'times.ttf', UPPER_SIZE = 45, UPPER_FONT_Y = 390, LOWER_FONT = 'arialbd.ttf', LOWER_SIZE = 14, LOWER_FONT_Y = 450)
-dem.makeImage('filename.jpg')
-```
-
-3. arrangedem() - генерирует демотиватор, создавая шаблон под вашу фотографию
+2. arrangedem() - генерирует демотиватор, создавая шаблон под вашу фотографию
 ```python 
 from simpledemotivators import arrangedem
 
@@ -48,12 +38,28 @@ dem = arrangedem('чего?', 'того') #2 строчки, если вы хо�
 dem.makeImage('filename.png') #Название изображения, которое будет взято за основу демотиватора
 ```
 
-4. quote() - создает цитату "Цитаты великих людей"
+3. quote() - создает цитату "Цитаты великих людей"
 ```python 
 from simpledemotivators import quote
 
 a = quote('text', "name")
 a.get('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
+```
+
+### Аргументы (demcreate)
+| Переменная | Пример | Описание |
+| -------- | --------- | ---------|
+| RESULT_FILENAME | 'test.png' | Название сохраняемого файла
+| colortext | 'white' | Цвет шрифта
+| colorfill | 'black' | Цвет заднего фона
+| fonttext | 'times.ttf' | Название шрифта
+
+Пример использования:
+```python 
+from simpledemotivators import demcreate
+
+dem = demcreate('Эй', 'что?')
+dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
 ```
 
 ### Документация
