@@ -36,6 +36,7 @@ class demcreate:
                 drawer.text(((1280 - size_1[0]) / 2, 820), self._text1, fill=colortext, font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
                 drawer.text(((1280 - size_2[0]) / 2, 920), self._text2, fill=colortext, font=font_2)
+                img.save(RESULT_FILENAME)
 
         def setline(self, text):
                 if len(text) > 12:
