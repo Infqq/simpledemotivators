@@ -44,7 +44,7 @@ class demcreate:
                         (width, height) = photo1.size
                         idraw = ImageDraw.Draw(photo1)
                         idraw.line((780,815, 1020, 815), fill=0, width=4)
-                        font_2 = ImageFont.truetype(font=fonttext, size=25, encoding='UTF-8')
+                        font_2 = ImageFont.truetype(font='times.ttf', size=25, encoding='UTF-8')
                         size_2 = idraw.textsize(text, font=font_2)
                         idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
                         photo1.save(settings.RESULT_FILENAME)
@@ -53,7 +53,7 @@ class demcreate:
                         (width, height) = photo1.size
                         idraw = ImageDraw.Draw(photo1)
                         idraw.line((940,817, 1065, 817), fill=0, width=4)
-                        font_2 = ImageFont.truetype(font=fonttext, size=20, encoding='UTF-8')
+                        font_2 = ImageFont.truetype(font='times.ttf', size=20, encoding='UTF-8')
                         size_2 = idraw.textsize(text, font=font_2)
                         idraw.text((((width+729) - size_2[0]) / 2, ((height-192) - size_2[1])), text, font=font_2)
                         photo1.save(settings.RESULT_FILENAME)
