@@ -1,5 +1,4 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
-from simpledemotivators import settings
 import textwrap
 
 
@@ -38,32 +37,32 @@ class demcreate:
                 drawer.text(((1280 - size_2[0]) / 2, 920), self._text2, fill=colortext, font=font_2)
                 img.save(RESULT_FILENAME)
 
-        def setline(self, text):
+        def setline(self, text, RESULT_FILENAME='demresult.jpg'):
                 if len(text) > 12:
                         photo1 = Image.open(self._file)
                         (width, height) = photo1.size
                         idraw = ImageDraw.Draw(photo1)
                         idraw.line((780,815, 1020, 815), fill=0, width=4)
-                        font_2 = ImageFont.truetype(font='times.ttf', size=25, encoding='UTF-8')
+                        font_2 = ImageFont.truetype(font=fonttext, size=25, encoding='UTF-8')
                         size_2 = idraw.textsize(text, font=font_2)
                         idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
-                        photo1.save(settings.RESULT_FILENAME)
+                        photo1.save(RESULT_FILENAME)
                 else:
-                        photo1 = Image.open(settings.RESULT_FILENAME)
+                        photo1 = Image.open(RESULT_FILENAME)
                         (width, height) = photo1.size
                         idraw = ImageDraw.Draw(photo1)
                         idraw.line((940,817, 1065, 817), fill=0, width=4)
-                        font_2 = ImageFont.truetype(font='times.ttf', size=20, encoding='UTF-8')
+                        font_2 = ImageFont.truetype(font=fonttext, size=20, encoding='UTF-8')
                         size_2 = idraw.textsize(text, font=font_2)
                         idraw.text((((width+729) - size_2[0]) / 2, ((height-192) - size_2[1])), text, font=font_2)
-                        photo1.save(settings.RESULT_FILENAME)
+                        photo1.save(RESULT_FILENAME)
 
 class arrangedem:
         def __init__(self, text1: str, text2: str) -> str:
                 self._text1 = text1
                 self._text2 = text2
 
-        def makeImage(self, file):
+        def makeImage(self, file, RESULT_FILENAME='demresult.jpg'):
                 size2 = 80
                 size3 = 60
                 user_img = Image.open(file).convert("RGBA")
@@ -90,7 +89,8 @@ class arrangedem:
                 drawer.text((((width+250) - size_1[0]) / 2, ((height+170) - size_1[1])), self._text1, fill=(240, 230, 210), font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
                 drawer.text((((width+250) - size_2[0]) / 2, ((height+215) - size_2[1])), self._text2, fill=(240, 230, 210), font=font_2)
-                img.save(settings.RESULT_FILENAME)
+                img.save(RESULT_FILENAME)
+
 class quote:
         def __init__(self, text: str, name: str) -> str:
                 self._text = text
