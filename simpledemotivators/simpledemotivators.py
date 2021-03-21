@@ -47,16 +47,20 @@ class demcreate:
                 """
                 font_1 = ImageFont.truetype(font=fonttext, size=size2, encoding='UTF-8')
                 textWidth = font_1.getsize(self._text1)[0]
+                
                 while textWidth >= (width+250) - 20:
                         font_1 = ImageFont.truetype(font=fonttext, size=size2, encoding='UTF-8')
                         textWidth = font_1.getsize(self._text1)[0]
                         size2 -= 1
+                    
                 font_2 = ImageFont.truetype(font=fonttext, size=size3, encoding='UTF-8')
                 textWidth = font_2.getsize(self._text2)[0]
+                
                 while textWidth >= (width+250) - 20:
                         font_2 = ImageFont.truetype(font=fonttext, size=size3, encoding='UTF-8')
                         textWidth = font_2.getsize(self._text2)[0]
                         size3 -= 1
+                        
                 size_1 = drawer.textsize(self._text1, font=font_1)
                 drawer.text(((1280 - size_1[0]) / 2, 820), self._text1, fill=colortext, font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
