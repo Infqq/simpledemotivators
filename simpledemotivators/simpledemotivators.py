@@ -37,7 +37,7 @@ class demcreate:
                 drawer.text(((1280 - size_2[0]) / 2, 920), self._text2, fill=colortext, font=font_2)
                 img.save(RESULT_FILENAME)
 
-        def setline(self, text, RESULT_FILENAME='demresult.jpg'):
+        def setline(self, text, RESULT_FILENAME='demresult.jpg', fonttext = 'times.ttf'):
                 if len(text) > 12:
                         photo1 = Image.open(self._file)
                         (width, height) = photo1.size
