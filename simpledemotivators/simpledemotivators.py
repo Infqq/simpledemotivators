@@ -1,5 +1,18 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import textwrap
+import requests
+
+
+version = requests.get(
+        'https://raw.githubusercontent.com/infqq/simpledemotivators/master/version.txt'
+        ).text.splitlines()[0] # Ужасный код по причине лишнего пробела при парсинге.
+
+if version != '1.5.0':
+        print(
+                f'[SimpleDemotivators] Данная версия библиотеки устарела, обновитесь до v{version} с GitHub')
+else:
+        print(
+                f'SimpleDemotivators v{version} started, version actual.')
 
 
 class demcreate:
@@ -7,10 +20,18 @@ class demcreate:
                 self._text1 = text1
                 self._text2 = text2
 
-        def makeImage(self, file, RESULT_FILENAME='demresult.jpg', colortext = 'white', colorfill = 'black', fonttext='times.ttf'):
+        def makeImage(
+                self, file, RESULT_FILENAME='demresult.jpg', colortext = 'white',
+                colorfill = 'black', fonttext='times.ttf', size2 = 80, size3 = 60
+                ):
+                
                 self._file = file
-                size2 = 80
-                size3 = 60
+                """Создаем шаблон для демотиватора
+
+                Вставляем фотографию в рамку
+                
+                """
+                
                 img = Image.new('RGB', (1280, 1024), color=colorfill)
                 img_border = Image.new('RGB', (1060, 720), color=('#000000'))
                 border = ImageOps.expand(img_border, border=2, fill='#ffffff')
@@ -19,6 +40,11 @@ class demcreate:
                 img.paste(border, (111, 96))
                 img.paste(user_img, (118, 103))
                 drawer = ImageDraw.Draw(img)
+                """Подбираем оптимальный размер шрифта
+
+                Добавляем текст в шаблон для демотиватора
+                
+                """
                 font_1 = ImageFont.truetype(font=fonttext, size=size2, encoding='UTF-8')
                 textWidth = font_1.getsize(self._text1)[0]
                 while textWidth >= (width+250) - 20:
@@ -35,9 +61,10 @@ class demcreate:
                 drawer.text(((1280 - size_1[0]) / 2, 820), self._text1, fill=colortext, font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
                 drawer.text(((1280 - size_2[0]) / 2, 920), self._text2, fill=colortext, font=font_2)
+                
                 img.save(RESULT_FILENAME)
 
-        def setline(self, text, RESULT_FILENAME='demresult.jpg', fonttext = 'times.ttf'):
+        def setline(self, text, RESULT_FILENAME='demresult.jpg'): # Лучше не использовать
                 if len(text) > 12:
                         photo1 = Image.open(self._file)
                         (width, height) = photo1.size
