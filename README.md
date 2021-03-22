@@ -46,7 +46,7 @@ a = quote('text', "name")
 a.get('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
 ```
 
-### Аргументы (demcreate)
+### Аргументы (demcreate и arrangedem)
 | Переменная | Пример | Описание |
 | -------- | --------- | ---------|
 | RESULT_FILENAME | 'test.png' | Название сохраняемого файла
