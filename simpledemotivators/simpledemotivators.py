@@ -5,14 +5,14 @@ import requests
 
 version = requests.get(
         'https://raw.githubusercontent.com/infqq/simpledemotivators/master/version.txt'
-        ).text.splitlines()[0] # Ужасный код по причине лишнего пробела при парсинге.
+        ).text.splitlines()
 
-if version != '1.5.0':
+if version[0] != '1.5.0':
         print(
-                f'[SimpleDemotivators] Данная версия библиотеки устарела, обновитесь до v{version} с GitHub')
+                f'[SimpleDemotivators] Данная версия библиотеки устарела, обновитесь до v{version[0]} с GitHub\nИзменения: {version[1]}')
 else:
         print(
-                f'SimpleDemotivators v{version} started, version actual.')
+                f'SimpleDemotivators v{version[0]} started, version actual.')
 
 
 class demcreate:
