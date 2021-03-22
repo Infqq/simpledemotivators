@@ -68,7 +68,7 @@ class demcreate:
                 
                 img.save(RESULT_FILENAME)
 
-        def setline(self, text, RESULT_FILENAME='demresult.jpg'): # Лучше не использовать
+        def setline(self, text, RESULT_FILENAME='demresult.jpg', fonttext='times.ttf'): # Лучше не использовать
                 if len(text) > 12:
                         photo1 = Image.open(self._file)
                         (width, height) = photo1.size
