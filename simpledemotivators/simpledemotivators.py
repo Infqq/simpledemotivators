@@ -71,26 +71,19 @@ class demcreate:
                 img.save(RESULT_FILENAME)
 
         def setline(
-                self, text, RESULT_FILENAME='demresult.jpg', fonttext='times.ttf'): # Лучше не использовать
-
-                if len(text) > 12:
-                        photo1 = Image.open(self._file)
-                        (width, height) = photo1.size
-                        idraw = ImageDraw.Draw(photo1)
-                        idraw.line((780,815, 1020, 815), fill=0, width=4)
-                        font_2 = ImageFont.truetype(font=fonttext, size=25, encoding='UTF-8')
-                        size_2 = idraw.textsize(text, font=font_2)
-                        idraw.text((((width+520) - size_2[0]) / 2, ((height-195) - size_2[1])), text, font=font_2)
-                        photo1.save(RESULT_FILENAME)
-                else:
-                        photo1 = Image.open(RESULT_FILENAME)
-                        (width, height) = photo1.size
-                        idraw = ImageDraw.Draw(photo1)
-                        idraw.line((940,817, 1065, 817), fill=0, width=4)
-                        font_2 = ImageFont.truetype(font=fonttext, size=20, encoding='UTF-8')
-                        size_2 = idraw.textsize(text, font=font_2)
-                        idraw.text((((width+729) - size_2[0]) / 2, ((height-192) - size_2[1])), text, font=font_2)
-                        photo1.save(RESULT_FILENAME)
+                self, text, RESULT_FILENAME='demresult.jpg', fonttext='times.ttf'):
+                
+                photo1 = Image.open(RESULT_FILENAME)
+                (width, height) = photo1.size
+                idraw = ImageDraw.Draw(photo1)
+                
+                idraw.line((1000-len(text)*5,817, 1008+len(text)*5, 817), fill=0, width=4)
+                
+                font_2 = ImageFont.truetype(font=fonttext, size=20, encoding='UTF-8')
+                size_2 = idraw.textsize(text.lower(), font=font_2)
+                idraw.text((((width+729) - size_2[0]) / 2, ((height-192) - size_2[1])), text.lower(), font=font_2)
+                
+                photo1.save(RESULT_FILENAME)
 
 class arrangedem:
         def __init__(
