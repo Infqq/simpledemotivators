@@ -1,38 +1,78 @@
 <h1 align="center">SimpleDemotivators</h1>
-    <blockquote>Create a demotivator? It's easy!</blockquote>
+    <blockquote>Create a demotivators? Its easy!</blockquote>
 </p>
 <hr>
 
-![prikol](demresulteng.jpg)
+![prikol1](demresult.jpg)
 
-## Installation
-1) Using the pip installer from GitHub: 
+## Installing
+1) By installer "pip" from GitHub
    
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/main.zip --upgrade
    ```
-2) Additionally, download the template.jpg file from the repository
+2) By installer pip from pypi
+   
+   ```sh
+   pip install simpledemotivators
+   ```
 
 ### Using
-Saves a file called - demresult.jpg
+Saving file with tittle - demresult.jpg
 
+1. demcreate() - Create simple demotivator
 ```python
 from simpledemotivators import demcreate
 
-dem = demcreate('soviet', 'union?')
-dem.makeImage('filename.jpg') #The title of the image that will be taken as a basis for the demotivator
+dem = demcreate('Эй', 'что?')
+dem.makeImage('filename.jpg')
 ```
 
-or
+2. arrangedem() - creating a demotivator with movable frames
+```python 
+from simpledemotivators import arrangedem
 
-```python
-from simpledemotivators import prodemoty
-
-dem = prodemoty('soviet', 'union?')
-dem.setimg(TEMPLATE_COORDS=(75, 45, 499, 373), TEMPLATE_WIDTH = 574, TEMPLATE_HEIGHT = 522, PADDING=10)
-dem.setfont(UPPER_FONT = 'times.ttf', UPPER_SIZE = 45, UPPER_FONT_Y = 390, LOWER_FONT = 'arialbd.ttf', LOWER_SIZE = 14, LOWER_FONT_Y = 450)
-dem.makeImage('filename')
+dem = arrangedem('чего?', 'того')
+dem.makeImage('filename.png')
 ```
 
-### Documentation (RU)
-* [Произвольные демотиваторы](prodemoty.md)
+3. quote() - creating a quote
+```python 
+from simpledemotivators import quote
+
+a = quote('text', "name")
+a.get('filename.png')
+```
+
+### Arguments (demcreate и arrangedem)
+| variable | example | description |
+| -------- | --------- | ---------|
+| RESULT_FILENAME | 'test.png' | saved file tiitle
+| colortext | 'white' | text color
+| colorfill | 'black' | fill color
+| fonttext | 'times.ttf' | Font color
+
+Example of using
+```python 
+from simpledemotivators import demcreate
+
+dem = demcreate('Эй', 'что?')
+dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
+```
+
+### Watermark - setline (Only in demcreate!)
+Добавляется вотермарка, пока что текст отображается только маленькими буквами.
+
+```python 
+from simpledemotivators import demcreate
+
+dem = demcreate('Ежжи', 'Сынок, ты с ума сошел.')
+dem.makeImage('your_pic.png')
+dem.setline('демотиватор.com')
+```
+![prikol2](setline_example.jpg)
+
+### Документация
+* [Возможные ошибки](./docs/errors.md)
+
+[![Stargazers over time](https://starchart.cc/Infqq/simpledemotivators.svg)](https://starchart.cc/Infqq/simpledemotivators)
