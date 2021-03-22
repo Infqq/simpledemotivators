@@ -62,8 +62,19 @@ dem = demcreate('Эй', 'что?')
 dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
 ```
 
+### Вотермарка - setline (Только в demcreate!)
+Добавляется вотермарка, пока что текст отображается только маленькими буквами.
+
+```python 
+from simpledemotivators import demcreate
+
+dem = demcreate('Ежжи', 'Сынок, ты с ума сошел.')
+dem.makeImage('your_pic.png')
+dem.setline('демотиватор.com')
+```
+![prikol2](setline_example.jpg)
+
 ### Документация
-* [Произвольные демотиваторы](./docs/prodemoty.md)
 * [Возможные ошибки](./docs/errors.md)
 
 [![Stargazers over time](https://starchart.cc/Infqq/simpledemotivators.svg)](https://starchart.cc/Infqq/simpledemotivators)
