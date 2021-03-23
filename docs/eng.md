@@ -61,7 +61,7 @@ dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
 ```
 
 ### Watermark - setline (Only in demcreate!)
-Добавляется вотермарка, пока что текст отображается только маленькими буквами.
+Adding watermark in demotivator
 
 ```python 
 from simpledemotivators import demcreate
@@ -71,8 +71,5 @@ dem.makeImage('your_pic.png')
 dem.setline('демотиватор.com')
 ```
 ![prikol2](setline_example.jpg)
-
-### Документация
-* [Возможные ошибки](./docs/errors.md)
 
 [![Stargazers over time](https://starchart.cc/Infqq/simpledemotivators.svg)](https://starchart.cc/Infqq/simpledemotivators)
