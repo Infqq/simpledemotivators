@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import textwrap
 import requests
+import os
 
 
 version = requests.get(
@@ -64,9 +65,9 @@ class demcreate:
                         size3 -= 1
                         
                 size_1 = drawer.textsize(self._text1, font=font_1)
-                drawer.text(((1280 - size_1[0]) / 2, 820), self._text1, fill=colortext, font=font_1)
+                drawer.text(((1280 - size_1[0]) / 2, 840), self._text1, fill=colortext, font=font_1)
                 size_2 = drawer.textsize(self._text2, font=font_2)
-                drawer.text(((1280 - size_2[0]) / 2, 920), self._text2, fill=colortext, font=font_2)
+                drawer.text(((1280 - size_2[0]) / 2, 930), self._text2, fill=colortext, font=font_2)
                 
                 img.save(RESULT_FILENAME)
 
@@ -164,7 +165,21 @@ class quote:
                 drawer.text((112, 510), self._name, fill='white', font=font_1)
                 drawer.text((270, 5), 'Цитаты великих людей', fill='white', font=font_2)
 
-                img = Image.open(file).convert("RGBA").resize((400, 400))
+                im = Image.open(file).convert("RGBA")
+                w, h = im.size
+                k = w / 400 - h / 400
+                if k > 0: im = im.crop(((w - h) / 2, 0, (w + h) / 2, h))
+                elif k < 0: im = im.crop((0, (h - w) / 2, w, (h + w) / 2))
+
+                im = im.resize((400, 400), Image.ANTIALIAS)
+
+                mask = Image.new('L', (400 * 4, 400 * 4), 0)
+                ImageDraw.Draw(mask).ellipse((0, 0) + mask.size, fill=255)
+                im.putalpha(mask.resize((400, 400), Image.ANTIALIAS))
+
+                im.save('image_out.png')
+                img = Image.open('image_out.png')
+                
                 user_img.paste(img, (100, 100))
                     
                 user_img.save(RESULT_FILENAME)
