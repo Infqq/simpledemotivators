@@ -1,8 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import textwrap
 import requests
-import os
-
 
 version = requests.get(
         'https://raw.githubusercontent.com/infqq/simpledemotivators/master/version.txt'
