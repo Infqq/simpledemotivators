@@ -7,7 +7,7 @@ version = requests.get(
         'https://raw.githubusercontent.com/infqq/simpledemotivators/master/version.txt'
         ).text.splitlines()
 
-if version[0] != '1.7.0':
+if version[0] != '1.8.0':
         print(
                 f'[SimpleDemotivators] Данная версия библиотеки устарела, обновитесь до v{version[0]} с GitHub\nИзменения: {version[1]}')
 else:
@@ -138,39 +138,23 @@ class arrangedem:
                 
                 img.save(RESULT_FILENAME)
                 
-class quote:
+class text_gen:
         def __init__(
-                self, text, name) -> str:
+                self, text) -> str:
                 
                 self._text = text
-                self._name = name
-
-        def get(
-                self, file, RESULT_FILENAME='qresult.jpg'):
                 
-                text = ''
-                lines = textwrap.wrap(self._text, width=24)
+        def get_text(
+                self, min_words=1, max_words=2
+                ):
+                 
+                split_text = self._text.split()
 
-                for i in lines: text = text + i + '\n'
-                
-                if len(text.splitlines()) > 9:
-                        lines = text.splitlines()[0:9]
-                        text = ''
-                        for i in lines: text = text + i + '\n'
-                        
-                user_img = Image.new('RGB', (1155, 600), color=('#000000'))
+                result = ''
 
-                drawer = ImageDraw.Draw(user_img)
-                font_1 = ImageFont.truetype(font='arialbd.ttf', size=40, encoding='UTF-8')
-                font_2 = ImageFont.truetype(font='times.ttf', size=60, encoding='UTF-8')
-                font_3 = ImageFont.truetype(font='times.ttf', size=40, encoding='UTF-8')
+                for i in range(random.randint(min_words, max_words)):
+                    random_text = random.choice(split_text)
+                    result = result + random_text + ' '
+                    del split_text[split_text.index(random_text)]
 
-                drawer.text((529, 90), text, fill='white', font=font_1)
-
-                drawer.text((529, 460), '© ' + self._name, fill='white', font=font_3)
-                drawer.text((270, 5), 'Цитаты великих людей', fill='white', font=font_2)
-
-                img = Image.open(file).convert("RGBA").resize((400, 400))
-                user_img.paste(img, (100, 100))
-                    
-                user_img.save(RESULT_FILENAME)
+                return result.lower()
