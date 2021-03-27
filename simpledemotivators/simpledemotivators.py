@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import textwrap
 import requests
+import random
 
 
 version = requests.get(
