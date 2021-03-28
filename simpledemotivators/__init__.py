@@ -5,7 +5,7 @@ import random
 
 
 version = requests.get(
-        'https://raw.githubusercontent.com/infqq/simpledemotivators/master/version.txt'
+        'https://raw.githubusercontent.com/infqq/simpledemotivators/master/simpledemotivators/version.txt'
         ).text.splitlines()
 
 if version[0] != '1.8.0':
