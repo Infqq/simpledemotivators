@@ -18,7 +18,7 @@ else:
 
 class demcreate:
         def __init__(
-                self, text1, text2) -> str:
+                self, text1='', text2='') -> str:
                 
                 self._text1 = text1
                 self._text2 = text2
