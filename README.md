@@ -1,4 +1,10 @@
 <h1 align="center">SimpleDemotivators</h1>
+<p align="center">
+    <img alt="Made with Python" src="https://img.shields.io/badge/Made%20with-Python-%23FFD242?logo=python&logoColor=white">
+    <img alt="Repo size" src="https://img.shields.io/github/repo-size/Infqq/simpledemotivators">
+    <img alt="issues" src="https://img.shields.io/github/issues/Infqq/simpledemotivators">
+    <img alt="release" src="https://img.shields.io/github/v/release/Infqq/simpledemotivators">
+</p>
     <blockquote>Создать демотиватор? Легко!</blockquote>
 </p>
 <hr>
