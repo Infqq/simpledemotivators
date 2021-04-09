@@ -4,6 +4,7 @@
 | -------- | ---------|
 | oserror: cannot open resource | Не найдены шрифты, необходимо установить. (Ubuntu - sudo apt-get install msttcorefonts)
 | Не отображаются эмоджи в демотиваторе | Установите шрифт Symbola.ttf, после укажите данный шрифт в кастомизации. (В основной документации это есть)
+| Не могу установить шрифт на Heroku | Скачайте в ВАШ репозиторий нужный шрифт (по дефолту times.ttf), после установите: pip3 install https://github.com/Infqq/simpledemotivators/archive/heroku-fix.zip --upgrade
 
 # Не работает библиотека, что делать?
 1. Запускаем код:
