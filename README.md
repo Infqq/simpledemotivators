@@ -13,7 +13,12 @@
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/main.zip --upgrade
    ```
-2) С помощью установщика pip из pypi: 
+2) Для heroku (Тоже с GitHub'а): 
+   
+   ```sh
+   pip3 install https://github.com/Infqq/simpledemotivators/archive/heroku-fix.zip --upgrade
+   ```
+3) С помощью установщика pip из pypi: 
    
    ```sh
    pip install simpledemotivators
