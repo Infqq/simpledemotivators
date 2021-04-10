@@ -68,7 +68,7 @@ result = rnd_sent.get_text(min_words=1, max_words=4)
 print(result) # Printed: привет, всем
 ```
 
-### Аргументы (demcreate и arrangedem)
+### Аргументы функции makeImage (demcreate и arrangedem)
 | Переменная | Пример | Описание |
 | -------- | --------- | ---------|
 | RESULT_FILENAME | 'test.png' | Название сохраняемого файла
@@ -82,7 +82,7 @@ print(result) # Printed: привет, всем
 from simpledemotivators import demcreate
 
 dem = demcreate('Эй', 'что?')
-dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
+dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com')
 ```
 
 ### Документация
