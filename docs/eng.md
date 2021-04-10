@@ -65,25 +65,16 @@ print(result)
 | colortext | 'white' | text color
 | colorfill | 'black' | fill color
 | fonttext | 'times.ttf' | Font color
+| line | 'demotivator.com' | watermark (only in demcreate)
 
 Example of using
 ```python 
 from simpledemotivators import demcreate
 
 dem = demcreate('text1', 'text2')
-dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
+dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='demotivator.com')
 ```
 
-### Watermark - setline (Only in demcreate!)
-Adding watermark in demotivator
-
-```python 
-from simpledemotivators import demcreate
-
-dem = demcreate('text1', 'text2')
-dem.makeImage('your_pic.png')
-dem.setline('demotivator.com')
-```
 ![prikol2](setline_example.jpg)
 
 [![Stargazers over time](https://starchart.cc/Infqq/simpledemotivators.svg)](https://starchart.cc/Infqq/simpledemotivators)
