@@ -11,6 +11,11 @@
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/main.zip --upgrade
    ```
+2) For heroku (Also from GitHub): 
+   
+   ```sh
+   pip3 install https://github.com/Infqq/simpledemotivators/archive/heroku-fix.zip --upgrade
+   ```
 2) By installer pip from pypi
    
    ```sh
@@ -24,7 +29,7 @@ Saving file with tittle - demresult.jpg
 ```python
 from simpledemotivators import demcreate
 
-dem = demcreate('Эй', 'что?')
+dem = demcreate('text1', 'text2')
 dem.makeImage('filename.jpg')
 ```
 
@@ -32,7 +37,7 @@ dem.makeImage('filename.jpg')
 ```python 
 from simpledemotivators import arrangedem
 
-dem = arrangedem('чего?', 'того')
+dem = arrangedem('text1', 'text2')
 dem.makeImage('filename.png')
 ```
 
@@ -42,6 +47,15 @@ from simpledemotivators import quote
 
 a = quote('text', "name")
 a.get('filename.png')
+```
+
+4. text_gen() - generates random text
+```python 
+from simpledemotivators import text_gen
+
+rnd_sent = text_gen('Hi all, I was born')
+result = rnd_sent.get_text(min_words=1, max_words=4)
+print(result)
 ```
 
 ### Arguments (demcreate и arrangedem)
@@ -56,7 +70,7 @@ Example of using
 ```python 
 from simpledemotivators import demcreate
 
-dem = demcreate('Эй', 'что?')
+dem = demcreate('text1', 'text2')
 dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
 ```
 
@@ -66,9 +80,9 @@ Adding watermark in demotivator
 ```python 
 from simpledemotivators import demcreate
 
-dem = demcreate('Ежжи', 'Сынок, ты с ума сошел.')
+dem = demcreate('text1', 'text2')
 dem.makeImage('your_pic.png')
-dem.setline('демотиватор.com')
+dem.setline('demotivator.com')
 ```
 ![prikol2](setline_example.jpg)
 
