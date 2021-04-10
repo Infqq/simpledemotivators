@@ -8,7 +8,7 @@ class demcreate:
         self._text2 = text2
 
     def makeImage(
-            self, file, RESULT_FILENAME='demresult.jpg', colortext='white',
+            self, file, line = None, RESULT_FILENAME='demresult.jpg', colortext='white',
             colorfill='black', fonttext='times.ttf', size2=80, size3=60
     ):
 
@@ -28,7 +28,7 @@ class demcreate:
         img.paste(user_img, (118, 103))
         drawer = ImageDraw.Draw(img)
         """Подбираем оптимальный размер шрифта
-
+        
         Добавляем текст в шаблон для демотиватора
 
         """
@@ -53,19 +53,14 @@ class demcreate:
         size_2 = drawer.textsize(self._text2, font=font_2)
         drawer.text(((1280 - size_2[0]) / 2, 930), self._text2, fill=colortext, font=font_2)
 
+        if line != None:
+            (width, height) = img.size
+            idraw = ImageDraw.Draw(img)
+
+            idraw.line((1000 - len(line) * 5, 817, 1008 + len(line) * 5, 817), fill=0, width=4)
+
+            font_2 = ImageFont.truetype(font=fonttext, size=20, encoding='UTF-8')
+            size_2 = idraw.textsize(line.lower(), font=font_2)
+            idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])), line.lower(), font=font_2)
+
         img.save(RESULT_FILENAME)
-
-    def setline(
-            self, text, RESULT_FILENAME='demresult.jpg', fonttext='times.ttf'):
-
-        photo1 = Image.open(RESULT_FILENAME)
-        (width, height) = photo1.size
-        idraw = ImageDraw.Draw(photo1)
-
-        idraw.line((1000 - len(text) * 5, 817, 1008 + len(text) * 5, 817), fill=0, width=4)
-
-        font_2 = ImageFont.truetype(font=fonttext, size=20, encoding='UTF-8')
-        size_2 = idraw.textsize(text.lower(), font=font_2)
-        idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])), text.lower(), font=font_2)
-
-        photo1.save(RESULT_FILENAME)
