@@ -57,17 +57,6 @@ a = quote('text', "name")
 a.get('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
 ```
 
-4. text_gen() - генерирует рандомный текст
-```python 
-from simpledemotivators import text_gen
-
-rnd_sent = text_gen('Всем привет, я родился')
-
-result = rnd_sent.get_text(min_words=1, max_words=4)
-
-print(result) # Printed: привет, всем
-```
-
 ### Аргументы функции makeImage (demcreate и arrangedem)
 | Переменная | Пример | Описание |
 | -------- | --------- | ---------|
@@ -75,14 +64,13 @@ print(result) # Printed: привет, всем
 | colortext | 'white' | Цвет шрифта
 | colorfill | 'black' | Цвет заднего фона
 | fonttext | 'times.ttf' | Название шрифта
-| line | 'демотиватор.com' | Вотемарка (только в demcreate)
 
 Пример использования:
 ```python 
 from simpledemotivators import demcreate
 
-dem = demcreate('Эй', 'что?')
-dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com')
+dem = demcreate('Эй', 'что?', 'демотиватор.com') # Или line='демотиватор.com', создание водяного знака (только в demcreate)
+dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf')
 ```
 
 ### Документация
