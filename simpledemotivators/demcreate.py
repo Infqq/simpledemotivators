@@ -2,13 +2,14 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 class demcreate:
     def __init__(
-            self, text1='', text2='') -> str:
+            self, text1='', text2='', line = None):
 
         self._text1 = text1
         self._text2 = text2
+        self._line = line
 
     def makeImage(
-            self, file, line = None, RESULT_FILENAME='demresult.jpg', colortext='white',
+            self, file, RESULT_FILENAME='demresult.jpg', colortext='white',
             colorfill='black', fonttext='times.ttf', size2=80, size3=60
     ):
 
@@ -53,14 +54,14 @@ class demcreate:
         size_2 = drawer.textsize(self._text2, font=font_2)
         drawer.text(((1280 - size_2[0]) / 2, 930), self._text2, fill=colortext, font=font_2)
 
-        if line != None:
+        if self._line != None:
             (width, height) = img.size
             idraw = ImageDraw.Draw(img)
 
-            idraw.line((1000 - len(line) * 5, 817, 1008 + len(line) * 5, 817), fill=0, width=4)
+            idraw.line((1000 - len(self._line) * 5, 817, 1008 + len(self._line) * 5, 817), fill=0, width=4)
 
             font_2 = ImageFont.truetype(font=fonttext, size=20, encoding='UTF-8')
-            size_2 = idraw.textsize(line.lower(), font=font_2)
-            idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])), line.lower(), font=font_2)
+            size_2 = idraw.textsize(self._line.lower(), font=font_2)
+            idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])), self._line.lower(), font=font_2)
 
         img.save(RESULT_FILENAME)

@@ -3,7 +3,6 @@ import requests
 from .demcreate import demcreate
 from .arrangedem import arrangedem
 from .quote import quote
-from .text_gen import text_gen
 
 version = requests.get(
         'https://raw.githubusercontent.com/infqq/simpledemotivators/master/simpledemotivators/version.txt'
@@ -19,6 +18,5 @@ else:
 __all__ = (
         'demcreate',
         'arrangedem',
-        'quote',
-        'text_gen'
+        'quote'
 )
