@@ -3,7 +3,7 @@ import textwrap
 
 class quote:
     def __init__(
-            self, text, name) -> str:
+            self, text, name):
 
         self._text = text
         self._name = name
