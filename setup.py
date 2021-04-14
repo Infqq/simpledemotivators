@@ -12,4 +12,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+        'pillow==8.2.0',
+    ],
 )
