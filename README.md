@@ -33,35 +33,35 @@
 ### Использование
 Сохраняет файл под названием - demresult.jpg
 
-1. demcreate() - создает простой демотиватор с дефолтным шаблоном.
+1. Demcreate() - создает простой демотиватор с дефолтным шаблоном.
 ```python
-from simpledemotivators import demcreate
+from simpledemotivators import Demcreate
 
-dem = demcreate('Эй', 'что?') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
+dem = Demcreate('Эй', 'что?') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
 dem.makeImage('filename.jpg') #Название изображения, которое будет взято за основу демотиватора
 ```
 
-2. arrangedem() - генерирует демотиватор, создавая шаблон под вашу фотографию
+2. Arrangedem() - генерирует демотиватор, создавая шаблон под вашу фотографию
 ```python 
-from simpledemotivators import arrangedem
+from simpledemotivators import Arrangedem
 
-dem = arrangedem('чего?', 'того') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
+dem = Arrangedem('чего?', 'того') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
 dem.makeImage('filename.png') #Название изображения, которое будет взято за основу демотиватора
 ```
 
-3. quote() - создает цитату "Цитаты великих людей"
+3. Quote() - создает цитату "Цитаты великих людей"
 ```python 
-from simpledemotivators import quote
+from simpledemotivators import Quote
 
-a = quote('text', "name")
+a = Quote('text', "name")
 a.get('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
 ```
 
-4. text_gen() - генерирует рандомный текст
+4. Text_gen() - генерирует рандомный текст
 ```python 
-from simpledemotivators import text_gen
+from simpledemotivators import Text_gen
 
-rnd_sent = text_gen('Всем привет, я родился')
+rnd_sent = Text_gen('Всем привет, я родился')
 
 result = rnd_sent.get_text(min_words=1, max_words=4)
 
@@ -75,13 +75,13 @@ print(result) # Printed: привет, всем
 | colortext | 'white' | Цвет шрифта
 | colorfill | 'black' | Цвет заднего фона
 | fonttext | 'times.ttf' | Название шрифта
-| line | 'демотиватор.com' | Вотемарка (только в demcreate)
+| line | 'демотиватор.com' | Вотемарка (только в Demcreate)
 
 Пример использования:
 ```python 
-from simpledemotivators import demcreate
+from simpledemotivators import Demcreate
 
-dem = demcreate('Эй', 'что?')
+dem = Demcreate('Эй', 'что?')
 dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com')
 ```
 
