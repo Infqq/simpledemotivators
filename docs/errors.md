@@ -14,16 +14,16 @@ from simpledemotivators import *
 namefile = 'namefile.png'
 
 try:
-    dem = demcreate('Эй', 'что?')
+    dem = Demcreate('Эй', 'что?')
     dem.makeImage(namefile)
     
-    dem = arrangedem('чего?', 'того')
+    dem = Arrangedem('чего?', 'того')
     dem.makeImage(namefile)
     
-    a = quote('text', "name")
+    a = Quote('text', "name")
     a.get(namefile)
     
-    rnd_sent = text_gen('Всем привет, я родился')
+    rnd_sent = Text_gen('Всем привет, я родился')
     result = rnd_sent.get_text(min_words=1, max_words=4)
     
     print('Библиотека полностью работает.')
