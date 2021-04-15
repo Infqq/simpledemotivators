@@ -1,9 +1,9 @@
 import requests
 
-from .demcreate import demcreate
-from .arrangedem import arrangedem
-from .quote import quote
-from .text_gen import text_gen
+from .Demcreate import Demcreate
+from .Arrangedem import Arrangedem
+from .Quote import Quote
+from .Text_gen import Text_gen
 
 version = requests.get(
         'https://raw.githubusercontent.com/infqq/simpledemotivators/master/simpledemotivators/version.txt'
@@ -17,8 +17,8 @@ else:
                 f'SimpleDemotivators v{version[0]} started, version actual.')
 
 __all__ = (
-        'demcreate',
-        'arrangedem',
-        'quote',
-        'text_gen'
+        'Demcreate',
+        'Arrangedem',
+        'Quote',
+        'Text_gen'
 )
