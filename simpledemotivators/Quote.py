@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 import textwrap
 
-class quote:
+class Quote:
     def __init__(
             self, text, name) -> str:
 
