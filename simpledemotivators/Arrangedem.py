@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-class arrangedem:
+class Arrangedem:
     def __init__(
             self, text1, text2) -> str:
 
