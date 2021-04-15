@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-class demcreate:
+class Demcreate:
     def __init__(
             self, text1='', text2='') -> str:
 
