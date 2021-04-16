@@ -1,4 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
+import requests
+import os
 
 
 class Demotivator:
@@ -10,9 +12,18 @@ class Demotivator:
 
     def create(
             self, file, line = None, RESULT_FILENAME='demresult.jpg', colortext='white',
-            colorfill='black', fonttext='times.ttf', size2=80, size3=60, arrange = False
+            colorfill='black', fonttext='times.ttf', size2=80, size3=60, arrange = False,
+            url = False, delete_file = False
     ):
 
+        if url:
+            p = requests.get(file)
+            out = open(r'demotivator_picture.jpg', "wb")
+            out.write(p.content)
+            out.close()
+
+            file = 'demotivator_picture.jpg'
+        
         """Создаем шаблон для демотиватора
 
         Вставляем фотографию в рамку
@@ -81,5 +92,8 @@ class Demotivator:
             idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])), line.lower(), font=font_2)
 
         img.save(RESULT_FILENAME)
+
+        if delete_file:
+            os.remove(file)
         
         return "successful"
