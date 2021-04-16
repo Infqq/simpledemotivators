@@ -33,7 +33,7 @@
 ### Использование
 Сохраняет файл под названием - demresult.jpg
 
-1. Demcreate() - создает простой демотиватор с дефолтным шаблоном.
+1. Demotivator() - создает простой демотиватор с дефолтным шаблоном.
 ```python
 from simpledemotivators import Demotivator
 
