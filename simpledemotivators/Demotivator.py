@@ -1,13 +1,13 @@
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-class Demcreate:
+class Demotivator:
     def __init__(
             self, text1='', text2='') -> str:
 
         self._text1 = text1
         self._text2 = text2
 
-    def makeImage(
+    def create(
             self, file, line = None, RESULT_FILENAME='demresult.jpg', colortext='white',
             colorfill='black', fonttext='times.ttf', size2=80, size3=60
     ):
@@ -64,3 +64,5 @@ class Demcreate:
             idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])), line.lower(), font=font_2)
 
         img.save(RESULT_FILENAME)
+        
+        return "successful"
