@@ -11,10 +11,7 @@ version = requests.get(
 if version[0] != '2.0.0':
         print(
                 f'[SimpleDemotivators] Данная версия библиотеки устарела, обновитесь до v{version[0]} с GitHub\nИзменения: {version[1]}')
-else:
-        print(
-                f'SimpleDemotivators v{version[0]} started, version actual.')
-
+        
 __all__ = (
         'Demotivator',
         'Quote',
