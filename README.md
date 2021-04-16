@@ -75,7 +75,7 @@ print(result) # Printed: привет, всем
 from simpledemotivators import Demotivator
 
 dem = Demotivator('Эй', 'что?')
-dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com', arrange=True)
+dem.create('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com', arrange=True)
 ```
 
 ### Документация
