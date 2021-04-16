@@ -60,7 +60,7 @@ result = rnd_sent.get_text(min_words=1, max_words=4)
 print(result) # Printed: привет, всем
 ```
 
-### Аргументы функции makeImage (demcreate и arrangedem)
+### Аргументы функции .create() (Demotivator () )
 | Переменная | Пример | Описание |
 | -------- | --------- | ---------|
 | RESULT_FILENAME | 'test.png' | Название сохраняемого файла
