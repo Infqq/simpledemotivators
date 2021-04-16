@@ -1,5 +1,8 @@
 from PIL import Image, ImageDraw, ImageFont
 import textwrap
+import requests
+import os
+
 
 class Quote:
     def __init__(
@@ -9,7 +12,7 @@ class Quote:
         self._name = name
 
     def get(
-            self, file, RESULT_FILENAME='qresult.jpg'):
+            self, file, RESULT_FILENAME='qresult.jpg', url=False):
 
         text = ''
         lines = textwrap.wrap(self._text, width=24)
@@ -33,7 +36,18 @@ class Quote:
         drawer.text((529, 460), '© ' + self._name, fill='white', font=font_3)
         drawer.text((270, 5), 'Цитаты великих людей', fill='white', font=font_2)
 
+        if url:
+            p = requests.get(file)
+            out = open(r'quote_picture.jpg', "wb")
+            out.write(p.content)
+            out.close()
+
+            file = 'quote_picture.jpg'
+        
         img = Image.open(file).convert("RGBA").resize((400, 400))
         user_img.paste(img, (100, 100))
 
         user_img.save(RESULT_FILENAME)
+        
+        if url:
+            os.remove('quote_picture.jpg')
