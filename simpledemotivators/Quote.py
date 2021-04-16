@@ -37,3 +37,5 @@ class Quote:
         user_img.paste(img, (100, 100))
 
         user_img.save(RESULT_FILENAME)
+
+        return "successful"
