@@ -3,8 +3,6 @@
 </p>
 <hr>
 
-![prikol1](demresult.jpg)
-
 ## Installing
 1) By installer "pip" from GitHub
    
@@ -25,35 +23,35 @@
 ### Using
 Saving file with tittle - demresult.jpg
 
-1. demcreate() - Create simple demotivator
+1. Demcreate() - Create simple demotivator
 ```python
-from simpledemotivators import demcreate
+from simpledemotivators import Demcreate
 
-dem = demcreate('text1', 'text2')
+dem = Demcreate('text1', 'text2')
 dem.makeImage('filename.jpg')
 ```
 
-2. arrangedem() - creating a demotivator with movable frames
+2. Arrangedem() - creating a demotivator with movable frames
 ```python 
-from simpledemotivators import arrangedem
+from simpledemotivators import Arrangedem
 
-dem = arrangedem('text1', 'text2')
+dem = Arrangedem('text1', 'text2')
 dem.makeImage('filename.png')
 ```
 
-3. quote() - creating a quote
+3. Quote() - creating a quote
 ```python 
-from simpledemotivators import quote
+from simpledemotivators import Quote
 
-a = quote('text', "name")
+a = Quote('text', "name")
 a.get('filename.png')
 ```
 
-4. text_gen() - generates random text
+4. Text_gen() - generates random text
 ```python 
-from simpledemotivators import text_gen
+from simpledemotivators import Text_gen
 
-rnd_sent = text_gen('Hi all, I was born')
+rnd_sent = Text_gen('Hi all, I was born')
 result = rnd_sent.get_text(min_words=1, max_words=4)
 print(result)
 ```
@@ -69,9 +67,9 @@ print(result)
 
 Example of using
 ```python 
-from simpledemotivators import demcreate
+from simpledemotivators import Demcreate
 
-dem = demcreate('text1', 'text2')
+dem = Demcreate('text1', 'text2')
 dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='demotivator.com')
 ```
 

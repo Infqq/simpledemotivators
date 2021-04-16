@@ -33,35 +33,27 @@
 ### Использование
 Сохраняет файл под названием - demresult.jpg
 
-1. demcreate() - создает простой демотиватор с дефолтным шаблоном.
+1. Demotivator() - создает простой демотиватор с дефолтным шаблоном.
 ```python
-from simpledemotivators import demcreate
+from simpledemotivators import Demotivator
 
-dem = demcreate('Эй', 'что?') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
-dem.makeImage('filename.jpg') #Название изображения, которое будет взято за основу демотиватора
+dem = Demotivator('Эй', 'что?') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
+dem.create('filename.jpg') #Название изображения, которое будет взято за основу демотиватора
 ```
 
-2. arrangedem() - генерирует демотиватор, создавая шаблон под вашу фотографию
+2. Quote() - создает цитату "Цитаты великих людей"
 ```python 
-from simpledemotivators import arrangedem
+from simpledemotivators import Quote
 
-dem = arrangedem('чего?', 'того') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
-dem.makeImage('filename.png') #Название изображения, которое будет взято за основу демотиватора
-```
-
-3. quote() - создает цитату "Цитаты великих людей"
-```python 
-from simpledemotivators import quote
-
-a = quote('text', "name")
+a = Quote('text', "name")
 a.get('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
 ```
 
-4. text_gen() - генерирует рандомный текст
+3. Text_gen() - генерирует рандомный текст
 ```python 
-from simpledemotivators import text_gen
+from simpledemotivators import Text_gen
 
-rnd_sent = text_gen('Всем привет, я родился')
+rnd_sent = Text_gen('Всем привет, я родился')
 
 result = rnd_sent.get_text(min_words=1, max_words=4)
 
@@ -75,14 +67,15 @@ print(result) # Printed: привет, всем
 | colortext | 'white' | Цвет шрифта
 | colorfill | 'black' | Цвет заднего фона
 | fonttext | 'times.ttf' | Название шрифта
-| line | 'демотиватор.com' | Вотемарка (только в demcreate)
+| line | 'демотиватор.com' | Вотемарка (только в Demotivator)
+| arrange | True/False | Демотиватор регулирует рамки под фотографию
 
 Пример использования:
 ```python 
-from simpledemotivators import demcreate
+from simpledemotivators import Demotivator
 
-dem = demcreate('Эй', 'что?')
-dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com')
+dem = Demotivator('Эй', 'что?')
+dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com', arrange=True)
 ```
 
 ### Документация
