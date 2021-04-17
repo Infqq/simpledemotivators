@@ -9,8 +9,8 @@ class Demotivator:
         self._text2 = text2
 
     def create(
-            self, file, line = None, RESULT_FILENAME = 'demresult.jpg', colortext = 'white',
-            colorfill = 'black', fonttext = 'times.ttf', size2=80, size3=60, arrange = False
+            self, file, line = None, RESULT_FILENAME='demresult.jpg', colortext='white',
+            colorfill='black', fonttext='times.ttf', size2=80, size3=60, arrange = False
     ):
 
         """Создаем шаблон для демотиватора
@@ -81,5 +81,5 @@ class Demotivator:
             idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])), line.lower(), font=font_2)
 
         img.save(RESULT_FILENAME)
-
+        
         return "successful"

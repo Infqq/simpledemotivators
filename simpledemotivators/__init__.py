@@ -3,7 +3,6 @@ import requests
 from .Demotivator import Demotivator
 from .Quote import Quote
 from .Text_gen import Text_gen
-from .Compression import Compression
 
 version = requests.get(
         'https://raw.githubusercontent.com/infqq/simpledemotivators/master/simpledemotivators/version.txt'
@@ -19,6 +18,5 @@ else:
 __all__ = (
         'Demotivator',
         'Quote',
-        'Text_gen',
-        'Compression'
+        'Text_gen'
 )
