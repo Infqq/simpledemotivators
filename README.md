@@ -80,6 +80,15 @@ dem = Demotivator('Эй', 'что?')
 dem.create('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com', arrange=True)
 ```
 
+### Пример использования фотографии со стороннего веб ресурса
+Допустим, вам нужно спарсить изображение для демотиватора/цитаты с сервера ВК/Дискорда. Чтобы не нагружать ваш код get реквестами, библиотека все сделает за вас.
+```python 
+from simpledemotivators import Demotivator
+
+dem = Demotivator('Эй', 'что?')
+dem.create('https://link_to_picture.ru/', url = True)
+```
+
 ### Документация
 * [Возможные ошибки](./docs/errors.md)
 
