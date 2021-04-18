@@ -12,7 +12,9 @@ class Quote:
         self._name = name
 
     def get(
-            self, file, RESULT_FILENAME='qresult.jpg', url=False):
+            self, file, RESULT_FILENAME='qresult.jpg', url=False, headline_font='times.ttf', headline_size=60,
+            name_font = 'times.ttf', name_size=40, text_font='arialbd.ttf', text_size=40
+            ):
 
         text = ''
         lines = textwrap.wrap(self._text, width=24)
