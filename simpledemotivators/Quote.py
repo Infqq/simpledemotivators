@@ -1,7 +1,8 @@
-from PIL import Image, ImageDraw, ImageFont
-import textwrap
-import requests
 import os
+import textwrap
+
+import requests
+from PIL import Image, ImageDraw, ImageFont
 
 
 class Quote:
@@ -45,11 +46,11 @@ class Quote:
             out.close()
 
             file = 'quote_picture.jpg'
-        
+
         img = Image.open(file).convert("RGBA").resize((400, 400))
         user_img.paste(img, (100, 100))
 
         user_img.save(result_filename)
-        
+
         if url:
             os.remove('quote_picture.jpg')

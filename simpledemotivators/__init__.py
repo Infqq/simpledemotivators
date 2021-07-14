@@ -2,7 +2,7 @@ import requests
 
 from .Demotivator import Demotivator
 from .Quote import Quote
-from .TextGen import Text_gen
+from .TextGen import TextGen
 
 try:
     version = requests.get(
@@ -19,5 +19,5 @@ except requests.exceptions.RequestException:
 __all__ = (
     'Demotivator',
     'Quote',
-    'TextGen.py'
+    'TextGen'
 )
