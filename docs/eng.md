@@ -1,6 +1,10 @@
 <h1 align="center">SimpleDemotivators</h1>
-    <blockquote>Create a demotivators? Its easy!</blockquote>
-</p>
+<p align="center">
+    <img alt="Made with Python" src="https://img.shields.io/badge/Made%20with-Python-%23FFD242?logo=python&logoColor=white">
+    <img alt="Repo size" src="https://img.shields.io/github/repo-size/Infqq/simpledemotivators">
+    <img alt="issues" src="https://img.shields.io/github/issues/Infqq/simpledemotivators">
+    <img alt="release" src="https://img.shields.io/github/v/release/Infqq/simpledemotivators">
+    <blockquote>Create a demotivators? It's easy!</blockquote>
 <hr>
 
 ## Installing
@@ -14,32 +18,24 @@
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/heroku-fix.zip --upgrade
    ```
-2) By installer pip from pypi
+2) By pip installer from PyPi
    
    ```sh
    pip install simpledemotivators
    ```
 
 ### Using
-Saving file with tittle - demresult.jpg
+Saving file with title - demresult.jpg
 
-1. Demcreate() - Create simple demotivator
+1. Demotivator() - Create simple demotivator
 ```python
-from simpledemotivators import Demcreate
+from simpledemotivators import Demotivator
 
-dem = Demcreate('text1', 'text2')
-dem.makeImage('filename.jpg')
+dem = Demotivator('text1', 'text2')
+dem.create('filename.jpg')
 ```
 
-2. Arrangedem() - creating a demotivator with movable frames
-```python 
-from simpledemotivators import Arrangedem
-
-dem = Arrangedem('text1', 'text2')
-dem.makeImage('filename.png')
-```
-
-3. Quote() - creating a quote
+2. Quote() - creating a quote
 ```python 
 from simpledemotivators import Quote
 
@@ -47,32 +43,43 @@ a = Quote('text', "name")
 a.get('filename.png')
 ```
 
-4. Text_gen() - generates random text
+3. TextGen() - generates text from source data
 ```python 
-from simpledemotivators import Text_gen
+from simpledemotivators import TextGen
 
-rnd_sent = Text_gen('Hi all, I was born')
+rnd_sent = TextGen('Hi all, I was born')
 result = rnd_sent.get_text(min_words=1, max_words=4)
 print(result)
 ```
 
-### Arguments (demcreate и arrangedem)
-| variable | example | description |
+### Arguments of create() method (class Demotivator ())
+| Variable | Example | Description |
 | -------- | --------- | ---------|
-| RESULT_FILENAME | 'test.png' | saved file tiitle
-| colortext | 'white' | text color
-| colorfill | 'black' | fill color
-| fonttext | 'times.ttf' | Font color
-| line | 'demotivator.com' | watermark (only in demcreate)
+| result_filename | 'test.png' | Saved file name
+| text_color | 'white' | Font color
+| colorfill | 'black' | Background color
+| font_name | 'times.ttf' | Font filename
+| line | 'demotivator.com' | Watermark (only in Demotivator)
+| arrange | True/False | Building frames for a photo
+| url | True/False | If your image is taken from another resource (website), then the bot itself parses the image from this link. (You will have to insert a link instead of the file)
+| delete_file | True/False | After demotivator create, your file for create demotivator, will be deleted
 
-Example of using
+### Example of using
 ```python 
-from simpledemotivators import Demcreate
+from simpledemotivators import Demotivator
 
-dem = Demcreate('text1', 'text2')
-dem.makeImage('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='demotivator.com')
+dem = Demotivator('text1', 'text2')
+dem.create('A-lbiRuxv_k.jpg', colorfill='black', font_name='arialbd.ttf', line='demotivator.com', arrange=True)
 ```
 
-![prikol2](setline_example.jpg)
+### Example of using image from any web source
+```python 
+from simpledemotivators import Demotivator
+
+dem = Demotivator('Эй', 'что?')
+dem.create(r'https://link_to_picture.ru/', url = True)
+```
+
+![prikol2](../setline_example.jpg)
 
 [![Stargazers over time](https://starchart.cc/Infqq/simpledemotivators.svg)](https://starchart.cc/Infqq/simpledemotivators)

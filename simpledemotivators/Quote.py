@@ -5,28 +5,28 @@ import os
 
 
 class Quote:
-    def __init__(
-            self, text, name) -> str:
-
+    def __init__(self, text, name):
         self._text = text
         self._name = name
 
     def get(
-            self, file, RESULT_FILENAME='qresult.jpg', url=False, headline_font='times.ttf', headline_size=60,
-            name_font = 'times.ttf', name_size=40, text_font='arialbd.ttf', text_size=40
-            ):
+            self, file, result_filename='qresult.jpg', url=False, headline_font='times.ttf', headline_size=60,
+            name_font='times.ttf', name_size=40, text_font='arialbd.ttf', text_size=40
+    ):
 
         text = ''
         lines = textwrap.wrap(self._text, width=24)
 
-        for i in lines: text = text + i + '\n'
+        for i in lines:
+            text = text + i + '\n'
 
         if len(text.splitlines()) > 9:
             lines = text.splitlines()[0:9]
             text = ''
-            for i in lines: text = text + i + '\n'
+            for i in lines:
+                text = text + i + '\n'
 
-        user_img = Image.new('RGB', (1155, 600), color=('#000000'))
+        user_img = Image.new('RGB', (1155, 600), color='#000000')
 
         drawer = ImageDraw.Draw(user_img)
         font_1 = ImageFont.truetype(font='arialbd.ttf', size=40, encoding='UTF-8')
@@ -49,7 +49,7 @@ class Quote:
         img = Image.open(file).convert("RGBA").resize((400, 400))
         user_img.paste(img, (100, 100))
 
-        user_img.save(RESULT_FILENAME)
+        user_img.save(result_filename)
         
         if url:
             os.remove('quote_picture.jpg')

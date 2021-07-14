@@ -4,9 +4,7 @@
     <img alt="Repo size" src="https://img.shields.io/github/repo-size/Infqq/simpledemotivators">
     <img alt="issues" src="https://img.shields.io/github/issues/Infqq/simpledemotivators">
     <img alt="release" src="https://img.shields.io/github/v/release/Infqq/simpledemotivators">
-</p>
     <blockquote>Создать демотиватор? Легко!</blockquote>
-</p>
 <hr>
 
 ![prikol1](demresult.jpg)
@@ -24,21 +22,21 @@
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/heroku-fix.zip --upgrade
    ```
-3) С помощью установщика pip из pypi: 
+3) С помощью установщика pip из PyPi: 
    
    ```sh
    pip install simpledemotivators
    ```
 
 ### Использование
-Сохраняет файл под названием - demresult.jpg
 
 1. Demotivator() - создает простой демотиватор с дефолтным шаблоном.
 ```python
 from simpledemotivators import Demotivator
 
-dem = Demotivator('Эй', 'что?') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
-dem.create('filename.jpg') #Название изображения, которое будет взято за основу демотиватора
+dem = Demotivator('Эй', 'что?') #  2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
+dem.create('filename.jpg') #  Сохраняет файл под названием - demresult.jpg
+                           #  Название изображения, которое будет взято за основу демотиватора
 ```
 
 2. Quote() - создает цитату "Цитаты великих людей"
@@ -46,38 +44,38 @@ dem.create('filename.jpg') #Название изображения, котор�
 from simpledemotivators import Quote
 
 a = Quote('text', "name")
-a.get('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
+a.create('filename.png') #  Файл аватарки юзера, сохраняет с названием qresult.jpg
 ```
 
-3. Text_gen() - генерирует рандомный текст
+3. TextGen() - генерирует текст из исходных данных
 ```python 
-from simpledemotivators import Text_gen
+from simpledemotivators import TextGen
 
-rnd_sent = Text_gen('Всем привет, я родился')
+rnd_sent = TextGen('Всем привет, я родился')
 
 result = rnd_sent.get_text(min_words=1, max_words=4)
 
-print(result) # Printed: привет, всем
+print(result) # Вывод: Привет, всем
 ```
 
-### Аргументы функции .create() (Demotivator () )
+### Аргументы функции .create() (Demotivator())
 | Переменная | Пример | Описание |
 | -------- | --------- | ---------|
-| RESULT_FILENAME | 'test.png' | Название сохраняемого файла
-| colortext | 'white' | Цвет шрифта
+| result_filename | 'test.png' | Название сохраняемого файла
+| text_color | 'white' | Цвет шрифта
 | colorfill | 'black' | Цвет заднего фона
-| fonttext | 'times.ttf' | Название шрифта
+| font_name | 'times.ttf' | Название шрифта
 | line | 'демотиватор.com' | Вотемарка (только в Demotivator)
 | arrange | True/False | Демотиватор регулирует рамки под фотографию
 | url | True/False | Если у вас картинка берется с другого ресурса (сайт), то бот сам парсит с этой ссылки картинку. (Вместо файла придется вставлять ссылку)
 | delete_file | True/False | После создания демотиватора, ваш файл (который взят за основу демотиватора) будет удален.
 
-Пример использования:
+### Пример использования:
 ```python 
 from simpledemotivators import Demotivator
 
 dem = Demotivator('Эй', 'что?')
-dem.create('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='демотиватор.com', arrange=True)
+dem.create('A-lbiRuxv_k.jpg', colorfill='black', font_name='arialbd.ttf', line='демотиватор.com', arrange=True)
 ```
 
 ### Пример использования фотографии со стороннего веб ресурса
@@ -86,7 +84,7 @@ dem.create('A-lbiRuxv_k.jpg', colorfill='black', fonttext='arialbd.ttf', line='�
 from simpledemotivators import Demotivator
 
 dem = Demotivator('Эй', 'что?')
-dem.create('https://link_to_picture.ru/', url = True)
+dem.create(r'https://link_to_picture.ru/', url = True)
 ```
 
 ### Документация

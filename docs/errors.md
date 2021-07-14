@@ -8,6 +8,7 @@
 
 # Не работает библиотека, что делать?
 1. Запускаем код:
+
 ```python
 from simpledemotivators import *
 
@@ -16,16 +17,16 @@ namefile = 'namefile.png'
 try:
     dem = Demcreate('Эй', 'что?')
     dem.makeImage(namefile)
-    
+
     dem = Arrangedem('чего?', 'того')
     dem.makeImage(namefile)
-    
+
     a = Quote('text', "name")
     a.get(namefile)
-    
-    rnd_sent = Text_gen('Всем привет, я родился')
+
+    rnd_sent = TextGen('Всем привет, я родился')
     result = rnd_sent.get_text(min_words=1, max_words=4)
-    
+
     print('Библиотека полностью работает.')
 except Exception as e:
     print(e)

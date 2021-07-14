@@ -1,13 +1,11 @@
 import random
 
-class Text_gen:
-    def __init__(
-            self, text) -> str:
+
+class TextGen:
+    def __init__(self, text):
         self._text = text
 
-    def get_text(
-            self, min_words=1, max_words=2
-    ):
+    def get_text(self, min_words=1, max_words=2):
         split_text = self._text.split()
 
         result = ''
