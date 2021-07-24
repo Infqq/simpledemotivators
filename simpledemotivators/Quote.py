@@ -5,15 +5,13 @@ import os
 
 
 class Quote:
-    def __init__(
-            self, text, name) -> str:
-
+    def __init__(self, text, name):
         self._text = text
         self._name = name
 
     def get(
             self, file, RESULT_FILENAME='qresult.jpg', url=False, headline_font='times.ttf', headline_size=60,
-            name_font = 'times.ttf', name_size=40, text_font='arialbd.ttf', text_size=40
+            name_font='times.ttf', name_size=40, text_font='arialbd.ttf', text_size=40
             ):
 
         text = ''
@@ -29,14 +27,14 @@ class Quote:
         user_img = Image.new('RGB', (1155, 600), color=('#000000'))
 
         drawer = ImageDraw.Draw(user_img)
-        font_1 = ImageFont.truetype(font='arialbd.ttf', size=40, encoding='UTF-8')
-        font_2 = ImageFont.truetype(font='times.ttf', size=60, encoding='UTF-8')
-        font_3 = ImageFont.truetype(font='times.ttf', size=40, encoding='UTF-8')
+        font_text = ImageFont.truetype(font=text_font, size=text_size, encoding='UTF-8')
+        font_name = ImageFont.truetype(font=name_font, size=name_size, encoding='UTF-8')
+        font_headline = ImageFont.truetype(font=headline_font, size=headline_size, encoding='UTF-8')
 
-        drawer.text((529, 90), text, fill='white', font=font_1)
+        drawer.text((529, 90), text, fill='white', font=font_text)
 
-        drawer.text((529, 460), '© ' + self._name, fill='white', font=font_3)
-        drawer.text((270, 5), 'Цитаты великих людей', fill='white', font=font_2)
+        drawer.text((529, 460), '© ' + self._name, fill='white', font=font_headline)
+        drawer.text((270, 5), 'Цитаты великих людей', fill='white', font=font_name)
 
         if url:
             p = requests.get(file)
