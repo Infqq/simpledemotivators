@@ -29,9 +29,9 @@ class Quote:
         user_img = Image.new('RGB', (1155, 600), color=('#000000'))
 
         drawer = ImageDraw.Draw(user_img)
-        font_1 = ImageFont.truetype(font='arialbd.ttf', size=40, encoding='UTF-8')
-        font_2 = ImageFont.truetype(font='times.ttf', size=60, encoding='UTF-8')
-        font_3 = ImageFont.truetype(font='times.ttf', size=40, encoding='UTF-8')
+        font_1 = ImageFont.truetype(font=text_font, size=text_size, encoding='UTF-8')
+        font_2 = ImageFont.truetype(font=headline_font, size=headline_size, encoding='UTF-8')
+        font_3 = ImageFont.truetype(font=name_font, size=name_size, encoding='UTF-8')
 
         drawer.text((529, 90), text, fill='white', font=font_1)
 
