@@ -13,7 +13,7 @@ class Quote:
 
     def get(
             self, file, RESULT_FILENAME='qresult.jpg', url=False, headline_font='times.ttf', headline_size=60,
-            name_font = 'times.ttf', name_size=40, text_font='arialbd.ttf', text_size=40
+            headline_text='Цитаты великих людей', name_font = 'times.ttf', name_size=40, text_font='arialbd.ttf', text_size=40
             ):
 
         text = ''
@@ -36,7 +36,7 @@ class Quote:
         drawer.text((529, 90), text, fill='white', font=font_1)
 
         drawer.text((529, 460), '© ' + self._name, fill='white', font=font_3)
-        drawer.text((270, 5), 'Цитаты великих людей', fill='white', font=font_2)
+        drawer.text((270, 5), headline_text, fill='white', font=font_2)
 
         if url:
             p = requests.get(file)
