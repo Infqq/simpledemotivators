@@ -81,7 +81,7 @@ class Demotivator:
             drawer.text(((1280 - size_1[0]) / 2, 840), self._top_text, fill=color_name, font=font_1)
             drawer.text(((1280 - size_2[0]) / 2, 930), self._bottom_text, fill=color_name, font=font_2)
 
-        if line is None:
+        if line is not None:
             (width, height) = img.size
             idraw = ImageDraw.Draw(img)
 
