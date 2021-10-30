@@ -9,25 +9,25 @@ class Quote:
         self._quote_text = quote_text
         self._author_name = author_name
 
-    def get(self, file, result_filename='qresult.jpg', use_url=False,
+    def get(self, file, result_filename='qresult.png', use_url=False,
             headline_text_font='verdana.ttf', headline_text_size=50,
-            headline_text='Цитаты великих людей', author_name_font='times.ttf',
-            author_name_size=40, quote_text_font='arial.ttf', quote_text_size=40) \
+            headline_text='Цитаты великих людей', author_name_font='ariali.ttf',
+            author_name_size=50, quote_text_font='ariali.ttf', quote_text_size=40) \
             -> bool:  # Returns True if method executed successfully
 
         text = ''
-        lines = textwrap.wrap(self._quote_text, width=24)
+        lines = textwrap.wrap(self._quote_text, width=40)
 
         for i in lines:
             text = text + i + '\n'
 
-        if len(text.splitlines()) > 9:
-            lines = text.splitlines()[0:9]
+        if len(text.splitlines()) > 5:
+            lines = text.splitlines()[0:5]
             text = ''
             for i in lines:
                 text = text + i + '\n'
 
-        user_img = Image.new('RGB', (1155, 600), color='#000000')
+        user_img = Image.new('RGBA', (1000, 550), color='#000000')
 
         drawer = ImageDraw.Draw(user_img)
         font_1 = ImageFont.truetype(font=quote_text_font, size=quote_text_size, encoding='UTF-8')
@@ -36,9 +36,9 @@ class Quote:
 
         size_headline = drawer.textsize(headline_text, font=font_2)
 
-        drawer.text((529, 120), text, fill='white', font=font_1)
-        drawer.text((529, 490), '© ' + self._author_name, fill='white', font=font_3)
-        drawer.text(((1155 - size_headline[0]) / 2, 25), headline_text, fill='white', font=font_2)
+        drawer.text((50, 120), f"«{text[:-1]}»", fill='white', font=font_1)
+        drawer.text((230, 410), '© ' + self._author_name, fill='white', font=font_3)
+        drawer.text(((1000 - size_headline[0]) / 2, 25), headline_text, fill='white', font=font_2)
 
         if use_url:
             p = requests.get(file)
@@ -48,8 +48,17 @@ class Quote:
 
             file = 'quote_picture.jpg'
 
-        img = Image.open(file).convert("RGBA").resize((400, 400))
-        user_img.paste(img, (100, 130))
+        im = Image.open(file).resize((150, 150))
+        w, h = im.size
+
+        im = im.crop(((w - h) / 2, 0, (w + h) / 2, h))
+
+        im = im.resize((150, 150), Image.ANTIALIAS)
+        mask = Image.new('L', (150 * 2, 150 * 2), 0)
+        ImageDraw.Draw(mask).ellipse((0, 0) + mask.size, fill=255)
+        im.putalpha(mask.resize((150, 150), Image.ANTIALIAS))
+
+        user_img.paste(im, (50, 370), mask=im)
 
         user_img.save(result_filename)
 
