@@ -48,17 +48,18 @@ class Quote:
 
             file = 'quote_picture.jpg'
 
-        im = Image.open(file).resize((150, 150))
-        w, h = im.size
+        """
+        Сглаживаем в форме круга фотографию автора цитаты
+        """
 
-        im = im.crop(((w - h) / 2, 0, (w + h) / 2, h))
-
-        im = im.resize((150, 150), Image.ANTIALIAS)
+        user_photo = Image.open(file).resize((150, 150))
+        width, height = user_photo.size
+        user_photo.crop(((width - height) / 2, 0, (width + height) / 2, height))
+        user_photo.resize((150, 150), Image.ANTIALIAS)
         mask = Image.new('L', (150 * 2, 150 * 2), 0)
         ImageDraw.Draw(mask).ellipse((0, 0) + mask.size, fill=255)
-        im.putalpha(mask.resize((150, 150), Image.ANTIALIAS))
-
-        user_img.paste(im, (50, 370), mask=im)
+        user_photo.putalpha(mask.resize((150, 150), Image.ANTIALIAS))
+        user_img.paste(user_photo, (50, 370), mask=user_photo)
 
         user_img.save(result_filename)
 
