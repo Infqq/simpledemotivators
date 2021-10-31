@@ -51,4 +51,6 @@ dem.create('https://link_to_picture.ru/', url=True)
 ```
 
 ### Документация
+* [Demotivator() - подробная документация](./docs/demotivator.md)
+* [Quote() - подробная документация](./docs/quote.md)
 * [Возможные ошибки](./docs/errors.md)
