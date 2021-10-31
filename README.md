@@ -7,11 +7,8 @@
 </p>
     <blockquote>Создать демотиватор? Легко!</blockquote>
 </p>
-<hr>
 
 ![prikol1](demresult.jpg)
-
-* [English documentation here](./docs/eng.md)
 
 ## Установка
 1) С помощью установщика pip из GitHub: 
@@ -41,7 +38,7 @@ dem.create('filename.jpg') #Название изображения, котор�
 from simpledemotivators import Quote
 
 a = Quote('text', "name")
-a.get('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
+a.create('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
 ```
 
 ### Аргументы функции .create() (Demotivator () )
