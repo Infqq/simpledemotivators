@@ -8,8 +8,8 @@ class Demotivator:
         self._top_text = top_text
         self._bottom_text = bottom_text
 
-    def create(self, file: str, line=None, result_filename='demresult.jpg',
-               color_name='white', fill_color='black',
+    def create(self, file: str, watermark=None, result_filename='demresult.jpg',
+               font_color='white', fill_color='black',
                font_name='times.ttf', top_size=80, bottom_size=60,
                arrange=False, use_url=False, delete_file=False) \
             -> bool:  # Returns True if method executed successfully
@@ -72,25 +72,25 @@ class Demotivator:
 
         if arrange:
             drawer.text((((width + 250) - size_1[0]) / 2, ((height + 190) - size_1[1])),
-                        self._top_text, fill=color_name,
+                        self._top_text, fill=font_color,
                         font=font_1)
             drawer.text((((width + 250) - size_2[0]) / 2, ((height + 235) - size_2[1])),
-                        self._bottom_text, fill=color_name,
+                        self._bottom_text, fill=font_color,
                         font=font_2)
         else:
-            drawer.text(((1280 - size_1[0]) / 2, 840), self._top_text, fill=color_name, font=font_1)
-            drawer.text(((1280 - size_2[0]) / 2, 930), self._bottom_text, fill=color_name, font=font_2)
+            drawer.text(((1280 - size_1[0]) / 2, 840), self._top_text, fill=font_color, font=font_1)
+            drawer.text(((1280 - size_2[0]) / 2, 930), self._bottom_text, fill=font_color, font=font_2)
 
-        if line is not None:
+        if watermark is not None:
             (width, height) = img.size
             idraw = ImageDraw.Draw(img)
 
-            idraw.line((1000 - len(line) * 5, 817, 1008 + len(line) * 5, 817), fill=0, width=4)
+            idraw.watermark((1000 - len(watermark) * 5, 817, 1008 + len(watermark) * 5, 817), fill=0, width=4)
 
             font_2 = ImageFont.truetype(font=font_name, size=20, encoding='UTF-8')
-            size_2 = idraw.textsize(line.lower(), font=font_2)
+            size_2 = idraw.textsize(watermark.lower(), font=font_2)
             idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])),
-                       line.lower(), font=font_2)
+                       watermark.lower(), font=font_2)
 
         img.save(result_filename)
 

@@ -4,8 +4,8 @@
 ```python
 from simpledemotivators import Quote
 
-dem = Quote('Текст', 'Имя')
-dem.create('ссылка/файл', url = True)
+dem = Quote('Текст цитаты', 'Имя автора цитаты')
+dem.create('URL/Файл', use_url=True)
 ```
 
 ### Аргументы функции .create()
