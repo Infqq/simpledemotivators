@@ -4,51 +4,30 @@
     <img alt="Repo size" src="https://img.shields.io/github/repo-size/Infqq/simpledemotivators">
     <img alt="issues" src="https://img.shields.io/github/issues/Infqq/simpledemotivators">
     <img alt="release" src="https://img.shields.io/github/v/release/Infqq/simpledemotivators">
-</p>
     <blockquote>Создать демотиватор? Легко!</blockquote>
-</p>
 
 ![prikol1](demresult.jpg)
 
 ## Установка
-1) С помощью установщика pip из GitHub: 
+1) стабильной версии через GitHub: 
    
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/main.zip --upgrade
    ```
-2) С помощью установщика pip из pypi: 
-   
+3) стабильной версии из PyPi:
+
    ```sh
-   pip install simpledemotivators
+   pip3 install simpledemotivators
+   ```
+2) версии в разработке через GitHub (данная версия может быть с багами и вообще неработоспособной!):
+
+   ```sh
+   pip3 install https://github.com/Infqq/simpledemotivators/archive/dev.zip --upgrade
    ```
 
-### Использование
-Сохраняет файл под названием - demresult.jpg
+На Windows: pip
 
-1. Demotivator() - создает простой демотиватор с дефолтным шаблоном.
-```python
-from simpledemotivators import Demotivator
-
-dem = Demotivator('Эй', 'что?') #2 строчки, если вы хотите только одну, то оставьте вторые кавчки пустыми
-dem.create('filename.jpg') #Название изображения, которое будет взято за основу демотиватора
-```
-
-2. Quote() - создает цитату "Цитаты великих людей"
-```python 
-from simpledemotivators import Quote
-
-a = Quote('text', "name")
-a.create('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
-```
-
-### Пример использования фотографии со стороннего веб ресурса
-Допустим, вам нужно спарсить изображение для демотиватора/цитаты с сервера ВК/Дискорда. Чтобы не нагружать ваш код get реквестами, библиотека все сделает за вас.
-```python 
-from simpledemotivators import Demotivator
-
-dem = Demotivator('Эй', 'что?')
-dem.create('https://link_to_picture.ru/', url=True)
-```
+На Linux/MacOS - pip3
 
 ### Документация
 * [Demotivator() - подробная документация](./docs/demotivator.md)
