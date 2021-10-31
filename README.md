@@ -41,26 +41,6 @@ a = Quote('text', "name")
 a.create('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
 ```
 
-### Аргументы функции .create() (Demotivator () )
-| Переменная | Пример | Описание |
-| -------- | --------- | ---------|
-| result_filename | 'test.png' | Название сохраняемого файла
-| color_name | 'white' | Цвет шрифта
-| fill_color | 'black' | Цвет заднего фона
-| font_name | 'times.ttf' | Название шрифта
-| line | 'демотиватор.com' | Вотемарка (только в Demotivator)
-| arrange | True/False | Демотиватор регулирует рамки под фотографию
-| use_url | True/False | Если у вас картинка берется с другого ресурса (сайт), то бот сам парсит с этой ссылки картинку. (Вместо файла придется вставлять ссылку)
-| delete_file | True/False | После создания демотиватора, ваш файл (который взят за основу демотиватора) будет удален.
-
-Пример использования:
-```python 
-from simpledemotivators import Demotivator
-
-dem = Demotivator('Эй', 'что?')
-dem.create('your_photo.jpg', fill_color='black', font_name='arialbd.ttf', line='демотиватор.com', arrange=True)
-```
-
 ### Пример использования фотографии со стороннего веб ресурса
 Допустим, вам нужно спарсить изображение для демотиватора/цитаты с сервера ВК/Дискорда. Чтобы не нагружать ваш код get реквестами, библиотека все сделает за вас.
 ```python 
@@ -71,4 +51,6 @@ dem.create('https://link_to_picture.ru/', url=True)
 ```
 
 ### Документация
+* [Demotivator() - подробная документация](./docs/demotivator.md)
+* [Quote() - подробная документация](./docs/quote.md)
 * [Возможные ошибки](./docs/errors.md)
