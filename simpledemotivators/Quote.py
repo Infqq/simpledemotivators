@@ -9,7 +9,7 @@ class Quote:
         self._quote_text = quote_text
         self._author_name = author_name
 
-    def get(self, file, result_filename='qresult.png', use_url=False,
+    def create(self, file, result_filename='qresult.png', use_url=False,
             headline_text_font='verdana.ttf', headline_text_size=50,
             headline_text='Цитаты великих людей', author_name_font='ariali.ttf',
             author_name_size=50, quote_text_font='ariali.ttf', quote_text_size=40) \
