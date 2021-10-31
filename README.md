@@ -29,6 +29,23 @@
 
 На Linux/MacOS - pip3
 
+### Примеры использования
+1. Demotivator() - создает простой демотиватор с дефолтным шаблоном.
+```python
+from simpledemotivators import Demotivator
+
+dem = Demotivator('Эй', 'что?') # 2 строчки
+dem.create('filename.jpg') # Название изображения, которое будет взято за основу демотиватора
+```
+
+2. Quote() - создает цитату
+```python 
+from simpledemotivators import Quote
+
+a = Quote('text', "name")
+a.create('filename.png') # Файл аватарки юзера, сохраняет с названием qresult.jpg
+```
+
 ### Документация
 * [Demotivator() - подробная документация](./docs/demotivator.md)
 * [Quote() - подробная документация](./docs/quote.md)
