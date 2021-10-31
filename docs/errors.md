@@ -1,33 +1,35 @@
-# Ошибки и их решение
+# OSError: Cannot open resource
+Эта ошибка означает что у вас не установлены шрифты, требуемые при создании цитаты/демотиватора.
+При создании демотиватора по умолчанию используется шрифт: times.ttf.
+При создании цитаты по умолчанию используются шрифты: verdana.ttf, ariali.ttf (Arial Italic).
+Если вы используете Ubuntu, установите шрифты командой: sudo apt-get install msttcorefonts.
+Если вы используете Windows, поместите необходимые шрифты в папку рядом с исполняемым python файлом.
 
-| Ошибка | Описание |
-| -------- | ---------|
-| oserror: cannot open resource | Не найдены шрифты, необходимо установить. (Ubuntu - sudo apt-get install msttcorefonts)
-| Не отображаются эмоджи в демотиваторе | Установите шрифт Symbola.ttf, после укажите данный шрифт в кастомизации. (В основной документации это есть)
-| Не могу установить шрифт на Heroku | Скачайте в ВАШ репозиторий нужный шрифт (по дефолту times.ttf), после установите: pip3 install https://github.com/Infqq/simpledemotivators/archive/heroku-fix.zip --upgrade
+# Не отображаются эмоджи при создании демотиватора
+... Установите шрифт Symbola.ttf, после укажите данный шрифт в кастомизации.
+
+# Не устанавливается щрифт на Heroku
+Поместите необходимые шрифты рядом с исполняемым python файлом (в ваш git репозиторий),
+а также установите heroku-fix версию библиотеки
+(pip3 install https://github.com/Infqq/simpledemotivators/archive/heroku-fix.zip --upgrade).
+Необходимые шрифты расписаны в первом заголовке.
 
 # Не работает библиотека, что делать?
 1. Запускаем код:
 ```python
 from simpledemotivators import *
 
-namefile = 'namefile.png'
+filename = 'filename.png'  # Имя выходного файла
 
 try:
-    dem = Demcreate('Эй', 'что?')
-    dem.makeImage(namefile)
+    demotivator = Demotivator('Эй', 'что?')
+    demotivator.create(filename)
     
-    dem = Arrangedem('чего?', 'того')
-    dem.makeImage(namefile)
-    
-    a = Quote('text', "name")
-    a.get(namefile)
-    
-    rnd_sent = Text_gen('Всем привет, я родился')
-    result = rnd_sent.get_text(min_words=1, max_words=4)
+    quote = Quote('Каво', "Молодой чебурек")
+    quote.get(filename)
     
     print('Библиотека полностью работает.')
 except Exception as e:
     print(e)
 ```
-Создаем Issue с ошибкой, если она есть.
+2. Создаем Issue с ошибкой, если она есть.
