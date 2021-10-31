@@ -19,7 +19,7 @@
    ```sh
    pip3 install simpledemotivators
    ```
-3) Версия в разработке через GitHub (данная версия может быть с багами и вообще неработоспособной!):
+3) Версия в разработке через GitHub (Данная версия может быть с багами и вообще неработоспособной! Использование Dev версии при разработке не рекомендуется):
 
    ```sh
    pip3 install https://github.com/Infqq/simpledemotivators/archive/dev.zip --upgrade
