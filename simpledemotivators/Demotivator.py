@@ -85,7 +85,7 @@ class Demotivator:
             (width, height) = img.size
             idraw = ImageDraw.Draw(img)
 
-            idraw.watermark((1000 - len(watermark) * 5, 817, 1008 + len(watermark) * 5, 817), fill=0, width=4)
+            idraw.line((1000 - len(watermark) * 5, 817, 1008 + len(watermark) * 5, 817), fill=0, width=4)
 
             font_2 = ImageFont.truetype(font=font_name, size=20, encoding='UTF-8')
             size_2 = idraw.textsize(watermark.lower(), font=font_2)
