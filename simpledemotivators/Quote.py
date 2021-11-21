@@ -52,7 +52,7 @@ class Quote:
         Сглаживаем в форме круга фотографию автора цитаты
         """
 
-        user_photo = Image.open(file).resize((150, 150))
+        user_photo = Image.open(file).resize((150, 150)).convert("RGBA")
         width, height = user_photo.size
         user_photo.crop(((width - height) / 2, 0, (width + height) / 2, height))
         user_photo.resize((150, 150), Image.ANTIALIAS)
