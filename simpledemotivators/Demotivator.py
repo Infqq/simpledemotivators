@@ -1,7 +1,9 @@
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from re import template
+from PIL import ImageDraw, ImageFont
 import requests
 import os
-
+from .image_drawer import Drawer
+from .image_manager import Image_manager
 
 class Demotivator:
     def __init__(self, top_text='', bottom_text=''):
@@ -22,68 +24,30 @@ class Demotivator:
 
             file = 'demotivator_picture.jpg'
 
-        """
-        Создаем шаблон для демотиватора
-        Вставляем фотографию в рамку
-        """
+        img_manager = Image_manager(arrange, fill_color, file)
+        template = img_manager.create_template()
+        demotivator_image = template[0]
 
-        if arrange:
-            user_img = Image.open(file).convert("RGBA")
-            (width, height) = user_img.size
-            img = Image.new('RGB', (width + 250, height + 260), color=fill_color)
-            img_border = Image.new('RGB', (width + 10, height + 10), color='#000000')
-            border = ImageOps.expand(img_border, border=2, fill='#ffffff')
-            img.paste(border, (111, 96))
-            img.paste(user_img, (118, 103))
-            drawer = ImageDraw.Draw(img)
-        else:
-            img = Image.new('RGB', (1280, 1024), color=fill_color)
-            img_border = Image.new('RGB', (1060, 720), color='#000000')
-            border = ImageOps.expand(img_border, border=2, fill='#ffffff')
-            user_img = Image.open(file).convert("RGBA").resize((1050, 710))
-            (width, height) = user_img.size
-            img.paste(border, (111, 96))
-            img.paste(user_img, (118, 103))
-            drawer = ImageDraw.Draw(img)
+        drawer = Drawer(demotivator_image)
+        width, height = template[1], template[2]
 
-        """Подбираем оптимальный размер шрифта
+        font_1 = img_manager.get_optimal_font_size(font_name, top_size, self._top_text)
+        font_2 = img_manager.get_optimal_font_size(font_name, bottom_size, self._bottom_text)
+
+        size_1 = drawer.get_text_size(self._top_text, font_1)
+        size_2 = drawer.get_text_size(self._bottom_text, font_2)
         
-        Добавляем текст в шаблон для демотиватора
-
-        """
-        font_1 = ImageFont.truetype(font=font_name, size=top_size, encoding='UTF-8')
-        text_width = font_1.getsize(self._top_text)[0]
-
-        while text_width >= (width + 250) - 20:
-            font_1 = ImageFont.truetype(font=font_name, size=top_size, encoding='UTF-8')
-            text_width = font_1.getsize(self._top_text)[0]
-            top_size -= 1
-
-        font_2 = ImageFont.truetype(font=font_name, size=bottom_size, encoding='UTF-8')
-        text_width = font_2.getsize(self._bottom_text)[0]
-
-        while text_width >= (width + 250) - 20:
-            font_2 = ImageFont.truetype(font=font_name, size=bottom_size, encoding='UTF-8')
-            text_width = font_2.getsize(self._bottom_text)[0]
-            bottom_size -= 1
-
-        size_1 = drawer.textsize(self._top_text, font=font_1)
-        size_2 = drawer.textsize(self._bottom_text, font=font_2)
-
         if arrange:
-            drawer.text((((width + 250) - size_1[0]) / 2, ((height + 190) - size_1[1])),
-                        self._top_text, fill=font_color,
-                        font=font_1)
-            drawer.text((((width + 250) - size_2[0]) / 2, ((height + 235) - size_2[1])),
-                        self._bottom_text, fill=font_color,
-                        font=font_2)
+            drawer.write_text((((width + 250) - size_1[0]) / 2, ((height + 190) - size_1[1])), 
+                                self._top_text, font_color, font_1)
         else:
-            drawer.text(((1280 - size_1[0]) / 2, 840), self._top_text, fill=font_color, font=font_1)
-            drawer.text(((1280 - size_2[0]) / 2, 930), self._bottom_text, fill=font_color, font=font_2)
+            drawer.write_text(((1280 - size_1[0]) / 2, 840), self._top_text, font_color, font_1)
+            drawer.write_text(((1280 - size_2[0]) / 2, 930), self._bottom_text, font_color, font_2)
 
+        # Thats i not refactored!
         if watermark is not None:
-            (width, height) = img.size
-            idraw = ImageDraw.Draw(img)
+            (width, height) = demotivator_image.size
+            idraw = ImageDraw.Draw(demotivator_image)
 
             idraw.line((1000 - len(watermark) * 5, 817, 1008 + len(watermark) * 5, 817), fill=0, width=4)
 
@@ -92,7 +56,7 @@ class Demotivator:
             idraw.text((((width + 729) - size_2[0]) / 2, ((height - 192) - size_2[1])),
                        watermark.lower(), font=font_2)
 
-        img.save(result_filename)
+        demotivator_image.save(result_filename)
 
         if delete_file:
             os.remove(file)
