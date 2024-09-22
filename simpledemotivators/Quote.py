@@ -6,6 +6,12 @@ import os
 
 class Quote:
     def __init__(self, quote_text, author_name):
+        """
+        Инициализирует объект Цитата
+
+        :param quote_text: текст цитаты
+        :param author_name: имя автора цитаты
+        """
         self._quote_text = quote_text
         self._author_name = author_name
 
@@ -15,6 +21,21 @@ class Quote:
             author_name_size=50, quote_text_font='ariali.ttf', quote_text_size=40) \
             -> bool:  # Returns True if method executed successfully
 
+        """
+        Создает изображение с цитатой
+
+        :param file: путь к файлу фотографии автора цитаты
+        :param result_filename: имя файла результата
+        :param use_url: True, если file - это URL
+        :param headline_text_font: путь к файлу шрифта для заголовка
+        :param headline_text_size: размер шрифта для заголовка
+        :param headline_text: текст заголовка
+        :param author_name_font: путь к файлу шрифта для имени автора
+        :param author_name_size: размер шрифта для имени автора
+        :param quote_text_font: путь к файлу шрифта для текста цитаты
+        :param quote_text_size: размер шрифта для текста цитаты
+        :return: True, если метод выполнился успешно
+        """
         text = ''
         lines = textwrap.wrap(self._quote_text, width=40)
 
