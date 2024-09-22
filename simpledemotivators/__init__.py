@@ -8,7 +8,7 @@ try:
         'https://raw.githubusercontent.com/infqq/simpledemotivators/master/simpledemotivators/version.txt'
     ).text.splitlines()
 
-    if version[0] != '2.1.1':
+    if version[0] != '2.1.2':
         print(f'[SimpleDemotivators] Данная версия библиотеки устарела, обновитесь до v{version[0]} с GitHub',
               f'\nИзменения: {version[1]}')
 except requests.exceptions.RequestException:
