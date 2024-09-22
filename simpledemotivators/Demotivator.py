@@ -5,6 +5,12 @@ import os
 
 class Demotivator:
     def __init__(self, top_text='', bottom_text=''):
+        """
+        Инициализирует объект Демотиватор
+
+        :param top_text: текст, который будет написан сверху
+        :param bottom_text: текст, который будет написан снизу
+        """
         self._top_text = top_text
         self._bottom_text = bottom_text
 
@@ -14,6 +20,22 @@ class Demotivator:
                arrange=False, use_url=False, delete_file=False) \
             -> bool:  # Returns True if method executed successfully
 
+        """
+        Создает демотиватор
+
+        :param file: путь к файлу фотографии
+        :param watermark: текст водяного знака, если None, то не будет добавлен
+        :param result_filename: имя для файла результата
+        :param font_color: цвет шрифта
+        :param fill_color: цвет фона
+        :param font_name: путь к файлу шрифта
+        :param top_size: размер шрифта для верхнего текста
+        :param bottom_size: размер шрифта для нижнего текста
+        :param arrange: True, если фотография должна быть вставлена в рамку
+        :param use_url: True, если file - это URL
+        :param delete_file: True, если файл, переданный в file, должен быть удален
+        :return: True, если метод выполнился успешно
+        """
         if use_url:
             p = requests.get(file)
             out = open(r'demotivator_picture.jpg', "wb")
